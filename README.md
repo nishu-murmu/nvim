@@ -12,6 +12,8 @@
  <img alt="Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2F_Gliches_" />
 </div>
 
+#### ⚠️ _NOTE:_
+<a>This config purely is for my own use. There are already great preconfigured configs out there. I'm still learning about this.</a>
 
 <a id="fea"></a>
 ## :sparkles: Features
