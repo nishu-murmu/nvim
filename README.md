@@ -6,9 +6,9 @@
  <a href="#todo">:scroll: TODO</a>
 </h4>
 <div align="center">
- <img alt="GitHub" src="https://img.shields.io/github/license/nishu-murmu/Tez.nvim">
- <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/nishu-murmu/Tez.nvim">
- <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/nishu-murmu/Tez.nvim">
+ <img alt="GitHub" src="https://img.shields.io/github/license/nishu-murmu/TezVim">
+<!--  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/nishu-murmu/TezVim">
+ <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/nishu-murmu/TezVim"> -->
  <img alt="Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2F_Gliches_" />
 </div>
 
@@ -48,8 +48,8 @@
     ```
 2. Install [Packer]()
     ```
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+    git clone --depth 1 https://github.com/wbthomason/packer.nvim\ 
+     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
     ```
 3. Open Neovim and run
     ```
