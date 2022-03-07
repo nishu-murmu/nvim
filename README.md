@@ -1,4 +1,4 @@
-<img src="https://github.com/nishu-murmu/TezVim/blob/main/assets/Tezvim-logo/Tezvim-logos_transparent.png"/> 
+<h1 align="center">TezVim</h1>
 <h4 align="center">
  <a href="#fea">:sparkles: Features</a> 🔸
  <a href="#install">:hammer_and_wrench: Installation</a> 🔸
