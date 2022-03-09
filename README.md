@@ -2,8 +2,7 @@
 <h4 align="center">
  <a href="#fea">:sparkles: Features</a> 🔸
  <a href="#install">:hammer_and_wrench: Installation</a> 🔸
- <a href="#camera">:camera: Screenshots</a> 🔸
- <a href="#todo">:scroll: TODO</a>
+ <a href="#camera">:camera: Screenshots</a>
 </h4>
 <div align="center">
  <img alt="GitHub" src="https://img.shields.io/github/license/nishu-murmu/TezVim">
@@ -89,13 +88,6 @@
 
 ### Which Key
 ![whichkey](https://github.com/nishu-murmu/TezVim/blob/main/assets/whichkey.png)
-
-<a id="todo"></a>
-## :scroll: TODO
- - [x] Logo
- - [ ] Add windows platform installation
- - [ ] Better docs and wiki
- - [ ] Have my first release
 
 <a id="credits"></a>
 ## :label: References
