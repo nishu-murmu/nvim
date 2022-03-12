@@ -1,15 +1,4 @@
-<h1 align="center">TezVim</h1>
-<h4 align="center">
- <a href="#fea">:sparkles: Features</a> 🔸
- <a href="#install">:hammer_and_wrench: Installation</a> 🔸
- <a href="#camera">:camera: Screenshots</a>
-</h4>
-<div align="center">
- <img alt="GitHub" src="https://img.shields.io/github/license/nishu-murmu/TezVim">
-<!--  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/nishu-murmu/TezVim">
- <img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/nishu-murmu/TezVim"> -->
- <img alt="Twitter" src="https://img.shields.io/twitter/url?url=https%3A%2F%2Ftwitter.com%2F_Gliches_" />
-</div>
+<h2 align="center">My nvim config in lua</h2>
 
 #### ⚠️ _NOTE:_
 <a>This config purely is for my own use. There are already great preconfigured configs out there. I'm still learning about this.</a>
@@ -54,41 +43,6 @@
     ```
     :PackerInstall
     ```
-    
-<a id="camera"></a>
-## :camera: ScreenShots
-
-### Startup
-![](https://github.com/nishu-murmu/TezVim/blob/main/assets/start-up.png)
-
-### Auto Completion
-![](https://github.com/nishu-murmu/TezVim/blob/main/assets/completion.png)
-
-### LSP
-#### LSP finder
-![](https://github.com/nishu-murmu/TezVim/blob/main/assets/lsp-finder.png)
-
-#### LSP rename
-![LSP rename](https://github.com/nishu-murmu/TezVim/blob/main/assets/rename.png)
-
-#### LSP diagnostics
-![](https://github.com/nishu-murmu/TezVim/blob/main/assets/lsp-diagnostics.png)
-
-### Fuzzy Finder
-![Telescope](https://github.com/nishu-murmu/TezVim/blob/main/assets/finder.png)
-
-### File Explorer
-![NvimTree](https://github.com/nishu-murmu/TezVim/blob/main/assets/file-explorer.png)
-
-### Git
-![LazyGit](https://github.com/nishu-murmu/TezVim/blob/main/assets/lazygit.png)
-
-### Terminal integration
-![Toggleterm](https://github.com/nishu-murmu/TezVim/blob/main/assets/terminal.png)
-
-### Which Key
-![whichkey](https://github.com/nishu-murmu/TezVim/blob/main/assets/whichkey.png)
-
 <a id="credits"></a>
 ## :label: References
 1. [Christian Chiarulli]()
