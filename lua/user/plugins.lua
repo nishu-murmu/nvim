@@ -70,7 +70,14 @@ return packer.startup(function(use)
   use 'nyngwang/NeoRoot.lua'
   use 'norcalli/snippets.nvim'
   use 'hrsh7th/vim-vsnip'
-  use 'rcarriga/vim-ultest'
+  use {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim"
+    }
+  }
   use "tamago324/nlsp-settings.nvim"
   use 'lewis6991/spellsitter.nvim'
   use {

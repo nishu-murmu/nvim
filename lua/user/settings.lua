@@ -27,6 +27,7 @@ set timeoutlen=500
 set clipboard=unnamedplus
 set laststatus=0
 set number
+set relativenumber
 set ruler
 set cursorline
 set hidden
@@ -37,8 +38,7 @@ set lazyredraw
 set wildignore+=*/node_modules/*
 set termguicolors
 set guifont=NotoSans:h12
-set background=dark  
-colorscheme onedark
+set background=dark
 au BufNewFile,BufRead *.es6 setf javascript
 au BufNewFile,BufRead *.tsx setf typescriptreact
 ]])
