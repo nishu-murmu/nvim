@@ -39,6 +39,7 @@ set wildignore+=*/node_modules/*
 set termguicolors
 set guifont=NotoSans:h12
 set background=dark
+colorscheme onedark
 au BufNewFile,BufRead *.es6 setf javascript
 au BufNewFile,BufRead *.tsx setf typescriptreact
 ]])

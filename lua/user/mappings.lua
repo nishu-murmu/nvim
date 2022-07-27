@@ -35,7 +35,6 @@ let s:scale = ['#f4468f', '#fd4a85', '#ff507a', '#ff566f', '#ff5e63',
 let s:gradient = map(s:scale, {i, fg -> wilder#make_hl(
       \ 'WilderGradient' . i, 'Pmenu', [{}, {}, {'foreground': fg}]
       \ )})
-
 call wilder#setup({'modes': [':', '/', '?']})
   
 call wilder#set_option('renderer', wilder#popupmenu_renderer({

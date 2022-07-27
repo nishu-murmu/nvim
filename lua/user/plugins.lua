@@ -37,6 +37,7 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim' 
   use "nvim-lua/popup.nvim" 
   use "nvim-lua/plenary.nvim" 
+  use { "williamboman/mason.nvim" }
   use "windwp/nvim-autopairs" -- pairs the brackets
   use "numToStr/Comment.nvim"
   use "L3MON4D3/LuaSnip" 
@@ -98,7 +99,6 @@ return packer.startup(function(use)
   use 'goolord/alpha-nvim'
   use {
       'kyazdani42/nvim-tree.lua',
-       commit = '3f4ed9b6c2598ab8304186486a05ae7a328b8d49'
   }
   use "folke/which-key.nvim" -- commands helper
   use 'gelguy/wilder.nvim'
@@ -106,7 +106,6 @@ return packer.startup(function(use)
   use 'roxma/vim-hug-neovim-rpc'
   use  "aserowy/tmux.nvim"
   use 'kdheepak/lazygit.nvim'
-  use '~/Documents/cyanide.nvim/'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

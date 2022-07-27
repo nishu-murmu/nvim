@@ -4,6 +4,7 @@
   require("user.lsp")
   -- require("user.lsp-saga")
   require("user.auto-pairs")
+  require('user.mason')
   require("user.Comment")
   require("user.lualine")
   require("user.treesitter")

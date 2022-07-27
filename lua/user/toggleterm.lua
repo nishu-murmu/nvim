@@ -20,9 +20,7 @@ require("toggleterm").setup{
   shell = vim.o.shell, -- change the default shell
   -- This field is only relevant if direction is set to 'float'
   float_opts = {
-   border = 'curved'
-    width = <value>,
-    height = <value>,
+   border = 'curved',
     winblend = 3,
     highlights = {
       border = "Normal",
