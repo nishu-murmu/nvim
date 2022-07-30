@@ -89,7 +89,6 @@ return packer.startup(function(use)
   use 'karb94/neoscroll.nvim'
   use 'norcalli/nvim-colorizer.lua' -- marking colors
   use "neovim/nvim-lspconfig" -- enable LSP
-  use 'glepnir/lspsaga.nvim' -- lsp saga
   use "nvim-telescope/telescope.nvim" -- fuzzy finder
   use "lewis6991/gitsigns.nvim" -- 
   use "kyazdani42/nvim-web-devicons" -- web icons
