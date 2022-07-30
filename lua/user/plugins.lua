@@ -34,14 +34,14 @@ packer.init({
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use 'wbthomason/packer.nvim' 
-  use "nvim-lua/popup.nvim" 
-  use "nvim-lua/plenary.nvim" 
+  use 'wbthomason/packer.nvim'
+  use "nvim-lua/popup.nvim"
+  use "nvim-lua/plenary.nvim"
   use { "williamboman/mason.nvim" }
   use "windwp/nvim-autopairs" -- pairs the brackets
   use "numToStr/Comment.nvim"
-  use "L3MON4D3/LuaSnip" 
-  use "rafamadriz/friendly-snippets" 
+  use "L3MON4D3/LuaSnip"
+  use "rafamadriz/friendly-snippets"
   use {
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
