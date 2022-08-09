@@ -15,7 +15,6 @@ map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", opts)
-map("n", "<leader>fo", ":Format<CR>", opts)
 map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opts)
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
@@ -23,29 +22,3 @@ map("n", "<leader>fl", "<cmd>Telescope git_files<CR>", opts)
 map("n", "<leader>tt", ":NvimTreeToggle<CR>", opts)
 map("n", "<leader>tr", ":NvimTreeRefresh<CR>", opts)
 map("n", "<leader>tn", ":NvimTreeFindFile<CR>", opts)
-
-vim.cmd([[
-let s:scale = ['#f4468f', '#fd4a85', '#ff507a', '#ff566f', '#ff5e63',
-      \ '#ff6658', '#ff704e', '#ff7a45', '#ff843d', '#ff9036',
-      \ '#f89b31', '#efa72f', '#e6b32e', '#dcbe30', '#d2c934',
-      \ '#c8d43a', '#bfde43', '#b6e84e', '#aff05b']
-let s:gradient = map(s:scale, {i, fg -> wilder#make_hl(
-      \ 'WilderGradient' . i, 'Pmenu', [{}, {}, {'foreground': fg}]
-      \ )})
-call wilder#setup({'modes': [':', '/', '?']})
-  
-call wilder#set_option('renderer', wilder#popupmenu_renderer({
-      \ 'highlighter': wilder#basic_highlighter(),
-      \ 'highlights': {
-      \   'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}]),
-      \ 'gradient': s:gradient
-      \ },
-      \ 'left': [
-      \   ' ', wilder#popupmenu_devicons(),
-      \ ],
-      \ 'right': [
-      \   ' ', wilder#popupmenu_scrollbar(),
-      \ ],
-      \ 'border': 'rounded'
-      \ }))
-]])
