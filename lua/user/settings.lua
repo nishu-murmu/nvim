@@ -37,14 +37,14 @@ set mouse=a
 set lazyredraw
 set wildignore+=*/node_modules/*
 set termguicolors
-set guifont=NotoSans:h12
+"set guifont=NotoSans:h12
 set background=dark
 colorscheme onedark
 au BufNewFile,BufRead *.es6 setf javascript
 au BufNewFile,BufRead *.tsx setf typescriptreact
 ]])
-
-vim.g.UtilSnipsExpandTrigger="<tab>"
-vim.g.UtilSnipsJumpForwardTrigger="<C-b>"
-vim.g.UtilSnipsJumpBackwardTrigger="<C-z>"
+vim.opt.guifont = { "Source Code Pro", ":h9" }
+vim.g.UtilSnipsExpandTrigger = "<tab>"
+vim.g.UtilSnipsJumpForwardTrigger = "<C-b>"
+vim.g.UtilSnipsJumpBackwardTrigger = "<C-z>"
 vim.g.find_files_findprg = "fd --hidden $* $d"
