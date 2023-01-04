@@ -1,4 +1,9 @@
 -- Attaches to every FileType mode
+<<<<<<< Updated upstream
+require("colorizer").setup({
+  { filetypes = { "css", "html" }, user_default_options = { names = true } },
+}, { mode = "foreground" })
+=======
 require 'colorizer'.setup()
 
 -- Attach to certain Filetypes, add special configuration for `html`
@@ -20,3 +25,4 @@ require 'colorizer'.setup {
   css = { rgb_fn = true; }; -- Enable parsing rgb(...) functions in css.
   html = { names = false; } -- Disable parsing "names" like Blue or Gray
 }
+>>>>>>> Stashed changes

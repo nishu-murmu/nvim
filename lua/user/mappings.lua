@@ -3,6 +3,11 @@ local opts = { noremap = true }
 
 map("i", "jk", "<Esc>", opts)
 map("i", "kj", "<Esc>", opts)
+map("v", "J", ":m '>+1<CR>gv=gv", opts)
+map("v", "K", ":m '<-2<CR>gv=gv", opts)
+map("n", "n", "nzzzv", opts)
+map("n", "N", "Nzzzv", opts)
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 map("n", "<leader>q", ":wq!<CR>", opts)
 map("n", "<leader>w", ":w<CR>", opts)
 map("n", "<TAB>", ":bnext<CR>", opts)

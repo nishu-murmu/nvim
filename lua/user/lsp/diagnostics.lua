@@ -1,5 +1,5 @@
-local M = {}
 
+ local M = {}
 -- TODO: backfill this to template
 M.setup = function()
   local signs = {
@@ -111,3 +111,4 @@ end
 M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 return M
+
