@@ -5,4 +5,4 @@ end
 
 require("user.lsp.diagnostics").setup()
 require("user.lsp.mason")
-require("user.lsp.servers.null_ls")
+require("user.lsp.null_ls")

@@ -213,7 +213,7 @@ _G.packer_plugins = {
   harpoon = {
     loaded = true,
     path = "/home/nishumurmu/.local/share/nvim/site/pack/packer/start/harpoon",
-    url = "https://github.com/christianchiarulli/harpoon"
+    url = "https://github.com/ThePrimeagen/harpoon"
   },
   ["hop.nvim"] = {
     loaded = true,

@@ -88,7 +88,7 @@ return packer.startup(function(use)
 	use("tom-anders/telescope-vim-bookmarks.nvim")
 
 	-- Marks
-	use("christianchiarulli/harpoon")
+	use("ThePrimeagen/harpoon")
 
 	-- Color
 	use("NvChad/nvim-colorizer.lua")
