@@ -69,5 +69,15 @@ for _, server in pairs(servers) do
         opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
     end
 
+    if server == "jsonls" then
+        local jsonls_opts = require("user.lsp.servers.jsonls")
+        opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+    end
+
+    if server == "cssls" then
+        local cssls_opts = require("user.lsp.servers.cssls")
+        opts = vim.tbl_deep_extend("force", cssls_opts, opts)
+    end
+
     lspconfig[server].setup(opts)
 end
