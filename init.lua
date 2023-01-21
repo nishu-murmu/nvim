@@ -1,6 +1,6 @@
+require("user.plugins")
 require("user.settings")
 require("user.mappings")
-require("user.plugins")
 require("user.lsp")
 require("user.auto-pairs")
 require("user.lualine")
