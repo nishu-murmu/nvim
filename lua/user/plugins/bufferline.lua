@@ -1,5 +1,8 @@
-
-require("bufferline").setup({
+local status_ok, bufferline = pcall(require, "bufferline")
+if not status_ok then
+  return
+  else
+bufferline.setup({
     options = {
         numbers = "ordinal",
         offsets = {
@@ -42,3 +45,6 @@ require("bufferline").setup({
         },
     },
 })
+end
+
+

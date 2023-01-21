@@ -1,4 +1,7 @@
-local wilder = require("wilder")
+local status_ok, wilder = pcall(require,"wilder")
+if not status_ok then
+  return
+else
 wilder.setup({ modes = { ":", "/", "?" } })
 wilder.set_option(
   "renderer",
@@ -20,3 +23,4 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_bo
       \ 'border': 'rounded',
       \ })))
 ]])
+end
