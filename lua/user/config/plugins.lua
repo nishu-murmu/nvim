@@ -56,8 +56,6 @@ return packer.startup(function(use)
   use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in language server client.
   use("hrsh7th/cmp-emoji")
   use("hrsh7th/cmp-nvim-lua")
-  use("zbirenbaum/copilot-cmp")
-  use({ "tzachar/cmp-tabnine", run = "./install.sh" })
 
   -- snippets
   use("L3MON4D3/LuaSnip")

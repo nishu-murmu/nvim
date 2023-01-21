@@ -37,6 +37,7 @@ set mouse=a
 set lazyredraw
 set wildignore+=*/node_modules/*
 set termguicolors
+colorscheme onedark 
 "set guifont=NotoSans:h12
 set background=dark
 au BufNewFile,BufRead *.es6 setf javascript

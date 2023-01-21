@@ -28,6 +28,7 @@ local servers = {
     "tsserver",
     "cssls",
     "cssmodules_ls",
+    "bashls",
     "emmet_ls",
     "html",
     "jdtls",
@@ -54,6 +55,11 @@ for _, server in pairs(servers) do
     }
     server = vim.split(server, "@")[1]
 
+    if server == "sumneko_lua" then
+        local sumneko_opts = require("user.lsp.servers.sumneko")
+        opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+    end
+
     if server == "pyright" then
         local pyright_opts = require("user.lsp.servers.pyright")
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
@@ -77,6 +83,11 @@ for _, server in pairs(servers) do
     if server == "cssls" then
         local cssls_opts = require("user.lsp.servers.cssls")
         opts = vim.tbl_deep_extend("force", cssls_opts, opts)
+    end
+
+    if server == "bashls" then
+        local bashls_opts = require("user.lsp.servers.bashls")
+        opts = vim.tbl_deep_extend("force", bashls_opts, opts)
     end
 
     lspconfig[server].setup(opts)

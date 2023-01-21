@@ -22,12 +22,12 @@ M.setup = function()
         --   active = signs,
         -- },
         update_in_insert = true,
-        -- underline = true,
+        underline = true,
         -- severity_sort = true,
         float = {
             -- focusable = false,
             -- style = "minimal",
-            -- border = "rounded",
+            border = "rounded",
             source = "always",
             -- header = "",
             -- prefix = "",
@@ -47,18 +47,14 @@ end
 
 local function lsp_highlight_document(client)
     -- Set autocommands conditional on server_capabilities
-    if client.server_capabilities.document_highlight then
-        vim.api.nvim_exec(
-            [[
+    vim.cmd([[
       augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+        autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()
         autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-    ]],
-            false
-        )
-    end
+    ]])
 end
 
 local function lsp_keymaps(client, bufnr)
