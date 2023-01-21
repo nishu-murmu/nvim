@@ -11,3 +11,4 @@ fi
 cd ../
 mv nvim/ ~/.config/
 
+source $MYVIMRC
