@@ -6,6 +6,8 @@ syntax enable
 filetype plugin indent on
 set encoding=utf-8
 set fileencoding=utf-8
+set list
+set listchars=tab:>-,eol:↵
 set showcmd
 set cmdheight=1
 set scrolloff=10
@@ -37,7 +39,7 @@ set mouse=a
 set lazyredraw
 set wildignore+=*/node_modules/*
 set termguicolors
-"set guifont=NotoSans:h12
+" hi Pmenu ctermbg=10 ctermfg=0 guibg=#8080
 set background=dark
 au BufNewFile,BufRead *.es6 setf javascript
 au BufNewFile,BufRead *.tsx setf typescriptreact
