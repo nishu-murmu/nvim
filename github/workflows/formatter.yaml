@@ -1,0 +1,17 @@
+name: Format with stylua
+on:
+  push:
+     branches: ["master"]
+     
+jobs:
+  stylua:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: StyLua
+      - uses: JohnnyMorganz/stylua-action@v2.0.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
+          # CLI arguments
+          args: --check .
