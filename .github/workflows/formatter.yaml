@@ -5,7 +5,7 @@ on:
       - ".github/**"
       - "*.md"
     branches: ["main"]
-    
+
 jobs:
   stylua:
     runs-on: ubuntu-latest
