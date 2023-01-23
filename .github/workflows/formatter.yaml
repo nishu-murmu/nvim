@@ -5,7 +5,7 @@ on:
       - ".github/**"
       - "*.md"
     branches: ["main"]
-
+    
 jobs:
   stylua:
     runs-on: ubuntu-latest
@@ -15,3 +15,15 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           args: --config-path=stylua.toml lua/
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          if ! [[ -z $(git status -s) ]]; then
+            git commit -m "format lua" lua/*
+          fi
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
