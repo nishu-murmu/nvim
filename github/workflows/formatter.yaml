@@ -1,17 +1,29 @@
-name: Format with stylua
+name: formatting
 on:
   push:
-     branches: ["master"]
-     
+    paths-ignore:
+      - ".github/**"
+      - "*.md"
+    branches: ["master"]
+
 jobs:
   stylua:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: StyLua
-      - uses: JohnnyMorganz/stylua-action@v2.0.0
+      - uses: JohnnyMorganz/stylua-action@1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
-          # CLI arguments
-          args: --config-path=.stylua.toml lua/
+          args: --config-path=stylua.toml lua/
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          if ! [[ -z $(git status -s) ]]; then
+            git commit -m "format lua" lua/*
+          fi
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
