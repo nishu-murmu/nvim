@@ -30,8 +30,8 @@ local servers = {
     "cssmodules_ls",
     "bashls",
     "emmet_ls",
+    "phpactor",
     "html",
-    "jdtls",
     "jsonls",
 }
 
@@ -59,8 +59,13 @@ for _, server in pairs(servers) do
         local sumneko_opts = require("user.lsp.servers.sumneko")
         opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
     end
+    if server == "phpactor" then
+        local phpls_opts = require("user.lsp.servers.phpls")
+        opts = vim.tbl_deep_extend("force", phpls_opts, opts)
+    end
 
     if server == "pyright" then
+        print(server)
         local pyright_opts = require("user.lsp.servers.pyright")
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
     end

@@ -1,5 +1,5 @@
 return {
-    cmd = { "python" },
+    cmd = { "pyright-langserver", "--stdio" },
     settings = {
         python = {
             analysis = {
@@ -12,4 +12,6 @@ return {
             },
         },
     },
+    filetypes = { "python" },
+    single_file_support = true,
 }

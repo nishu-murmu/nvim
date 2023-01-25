@@ -29,30 +29,28 @@ map("n", "<leader>tr", ":NvimTreeRefresh<CR>", opts)
 map("n", "<leader>tn", ":NvimTreeFindFile<CR>", opts)
 map("n", "<leader>o", ":lua vim.lsp.buf.format()<CR>", opts)
 
-
-
 local status_ok, mark = pcall(require, "harpoon.mark")
 if not status_ok then
-  return
+    return
 end
 local status_ok1, ui = pcall(require, "harpoon.ui")
 if not status_ok1 then
-  return
+    return
 end
 
 if status_ok and status_ok1 then
-vim.keymap.set("n", "<leader>m", mark.add_file)
-vim.keymap.set("n", "<S-n>", ui.toggle_quick_menu)
-vim.keymap.set("n", "<M-1>", function()
-    ui.nav_file(1)
-end)
-vim.keymap.set("n", "<M-2>", function()
-    ui.nav_file(2)
-end)
-vim.keymap.set("n", "<M-3>", function()
-    ui.nav_file(3)
-end)
-vim.keymap.set("n", "<M-4>", function()
-    ui.nav_file(4)
-end)
+    vim.keymap.set("n", "<leader>m", mark.add_file)
+    vim.keymap.set("n", "<S-n>", ui.toggle_quick_menu)
+    vim.keymap.set("n", "<M-1>", function()
+        ui.nav_file(1)
+    end)
+    vim.keymap.set("n", "<M-2>", function()
+        ui.nav_file(2)
+    end)
+    vim.keymap.set("n", "<M-3>", function()
+        ui.nav_file(3)
+    end)
+    vim.keymap.set("n", "<M-4>", function()
+        ui.nav_file(4)
+    end)
 end
