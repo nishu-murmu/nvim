@@ -65,7 +65,6 @@ for _, server in pairs(servers) do
     end
 
     if server == "pyright" then
-        print(server)
         local pyright_opts = require("user.lsp.servers.pyright")
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
     end

@@ -1,10 +1,10 @@
-local status_ok, nvim_tree = pcall(require, "nvim-tree")
-if not status_ok then
+local status, nvim_tree = pcall(require, "nvim-tree")
+if not status then
     return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
+local config_status, nvim_tree_config = pcall(require, "nvim-tree.config")
+if not config_status then
     return
 end
 
@@ -13,7 +13,6 @@ local tree_cb = nvim_tree_config.nvim_tree_callback
 nvim_tree.setup({
     disable_netrw = true,
     hijack_netrw = true,
-    open_on_setup = false,
     ignore_ft_on_setup = {
         "startify",
         "dashboard",
@@ -69,7 +68,6 @@ nvim_tree.setup({
     },
 })
 
-local tree_cb = require("nvim-tree.config").nvim_tree_callback
 -- default mappings
 local list = {
     { key = { "<CR>", "o", "<2-LeftMouse>" }, cb = tree_cb("edit") },
