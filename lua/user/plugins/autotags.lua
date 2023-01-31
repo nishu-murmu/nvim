@@ -1,6 +1,6 @@
 local status_ok, tags = pcall(require, "nvim-ts-autotags")
 if not status_ok then
-  return
+    return
 end
 
 tags.setup()
