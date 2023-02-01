@@ -32,26 +32,10 @@
 ### Install for Linux
 1. Clone this repository
     ```
-    git clone https://github.com/nishu-murmu/TezVim.git ~/.config/nvim
+    git clone https://github.com/nishu-murmu/nvim
     ```
-2. Install [Packer](https://github.com/wbthomason/packer.nvim)
-    ```
-    git clone --depth 1 https://github.com/wbthomason/packer.nvim\ 
-     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-    ```
-3. Open Neovim and run
-    ```
-    :PackerInstall
-    ```
-### Install for Windows
-1. Clone this repository
-    ```
-    git clone https://github.com/nishu-murmu/TezVim.git ~/.config/nvim
-    ```
-2. Install [Packer](https://github.com/wbthomason/packer.nvim)
-   ```
-   git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
-   ```
+2. Run the `install_nvim.sh` file and restart the Neovim.
+    
 <a id="credits"></a>
 ## :label: References
 1. [Christian Chiarulli](https://github.com/ChristianChiarulli)
