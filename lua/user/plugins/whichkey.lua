@@ -78,7 +78,7 @@ local opts = {
     nowait = true, -- use `nowait` when creating keymaps
 }
 
-local mappings = {
+local normal_mappings = {
     ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
     ["b"] = {
         "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
@@ -93,6 +93,14 @@ local mappings = {
     },
     ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
     ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+    ["q"] = { ":wq!<cr>" },
+    ["o"] = { ":lua vim.lsp.buf.format()<CR>" },
+    ["r"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]] },
+
+    w = {
+        name = "write/source",
+        e = { ":w<CR>:source %" },
+    },
 
     p = {
         name = "Packer",
@@ -171,6 +179,9 @@ local mappings = {
 
     t = {
         name = "Terminal",
+        r = { ":NvimTreeRefresh" },
+        n = { ":NvimTreeFindFile" },
+        t = { ":NvimTreeToggle" },
         u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
         p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
         f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
@@ -178,6 +189,38 @@ local mappings = {
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
     },
 }
+local visual_opts = {
+    mode = "v", -- VISUAL mode
+    prefix = "<leader>",
+    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = true, -- use `silent` when creating keymaps
+    noremap = true, -- use `noremap` when creating keymaps
+    nowait = true, -- use `nowait` when creating keymaps
+}
 
+local visual_mappings = {
+    ["J"] = { ":m '>+1<CR>gv=gv" },
+    ["K"] = { ":m '<-2<CR>gv=gv" },
+    ["<"] = { "<gv" },
+    [">"] = { ">gv" },
+}
+
+local insert_opts = {
+    mode = "i", -- INSERT mode
+    buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+    silent = true, -- use `silent` when creating keymaps
+    noremap = true, -- use `noremap` when creating keymaps
+    nowait = true, -- use `nowait` when creating keymaps
+}
+
+local insert_mappings = {
+    j = {
+        name = "Escape sequence",
+        k = { "<Esc>" },
+        j = { "<Esc>" },
+    },
+}
 which_key.setup(setup)
-which_key.register(mappings, opts)
+which_key.register(normal_mappings, opts)
+which_key.register(visual_mappings, visual_opts)
+which_key.register(insert_mappings, insert_opts)
