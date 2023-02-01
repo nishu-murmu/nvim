@@ -11,9 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: JohnnyMorganz/stylua-action@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        version: latest # NOTE: we recommend pinning to a specific version in case of formatting changes
-        # CLI arguments
-        args: stylua src/
+      - name: Install
+        run: cargo install stylua
+      - name: Format
+        run: stylua --check lua/ --config-path=stylua.toml
