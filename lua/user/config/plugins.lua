@@ -196,7 +196,7 @@ return packer.startup(function(use)
     use("gelguy/wilder.nvim")
 
     -- Peronal plugins
-    use("~/Documents/luaPlugin.nvim/")
+    -- use("~/Documents/luaPlugin.nvim/")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
