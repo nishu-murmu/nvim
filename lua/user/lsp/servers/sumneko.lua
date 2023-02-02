@@ -9,7 +9,7 @@ return {
             },
             completion = {
                 enable = true,
-                callSnippet = "Both",
+                callSnippet = "Replace",
             },
             diagnostics = {
                 -- Get the language server to recognize the `vim` global

@@ -55,6 +55,7 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-nvim-lsp") -- nvim-cmp source for neovim's built-in language server client.
     use("hrsh7th/cmp-emoji")
     use("hrsh7th/cmp-nvim-lua")
+    use("folke/neodev.nvim")
 
     -- snippets
     use("L3MON4D3/LuaSnip")
@@ -178,6 +179,12 @@ return packer.startup(function(use)
     use("karb94/neoscroll.nvim")
     use("m4xshen/autoclose.nvim")
     use("ekickx/clipboard-image.nvim")
+    use({
+        "anuvyklack/pretty-fold.nvim",
+        config = function()
+            require("pretty-fold").setup()
+        end,
+    })
     use("nyngwang/NeoRoot.lua")
     use({
         "nvim-neotest/neotest",
