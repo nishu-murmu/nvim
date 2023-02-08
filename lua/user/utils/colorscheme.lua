@@ -1,9 +1,6 @@
-local status_ok, ondedark = pcall(require, "onedark")
+local status_ok, gruvbox = pcall(require, "gruvbox")
 if not status_ok then
     return
 else
-    ondedark.setup({
-        style = "darker",
-    })
-    ondedark.load()
+    gruvbox.setup()
 end

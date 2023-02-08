@@ -15,8 +15,12 @@ set splitbelow
 set splitright
 set conceallevel=0
 set title
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+" set tabstop=2
+" set shiftwidth=2
+" set softtabstop=2
 set autoindent
 set smarttab
 set expandtab
@@ -24,7 +28,7 @@ set showtabline=2
 set noshowmode
 set nobackup
 set nowritebackup
-set updatetime=300
+set updatetime=50
 set timeoutlen=500
 set clipboard=unnamedplus
 set laststatus=0
@@ -32,6 +36,10 @@ set number
 set relativenumber
 set ruler
 set cursorline
+:hi CursorLine gui=underline
+:hi CursorLine cterm=underline
+:hi Cursor gui=underline
+:hi Cursor cterm=underline
 set hidden
 set nowrap
 set backspace=start,eol,indent
@@ -39,6 +47,7 @@ set mouse=a
 set lazyredraw
 set wildignore+=*/node_modules/*
 set termguicolors
+colorscheme catppuccin-mocha  
 " hi Pmenu ctermbg=10 ctermfg=0 guibg=#8080
 set background=dark
 au BufNewFile,BufRead *.es6 setf javascript
@@ -48,4 +57,5 @@ vim.opt.guifont = { "Source Code Pro", ":h9" }
 vim.g.UtilSnipsExpandTrigger = "<tab>"
 vim.g.UtilSnipsJumpForwardTrigger = "<C-b>"
 vim.g.UtilSnipsJumpBackwardTrigger = "<C-z>"
+vim.g.find_files_findprg = "fd --hidden $* $d"
 vim.g.find_files_findprg = "fd --hidden $* $d"

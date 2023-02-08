@@ -59,21 +59,15 @@ return packer.startup(function(use)
 
     -- snippets
     use("L3MON4D3/LuaSnip")
-    use("rafamadriz/friendly-snippets")
-    use("SirVer/ultisnips")
-    use("norcalli/snippets.nvim")
-    use("hrsh7th/vim-vsnip")
 
     -- Syntax/Treesitter
     use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     })
-    use("JoosepAlviste/nvim-ts-context-commentstring")
     use("p00f/nvim-ts-rainbow")
     use("nvim-treesitter/playground")
     use("windwp/nvim-ts-autotag")
-    use("nvim-treesitter/nvim-treesitter-textobjects")
     use("kylechui/nvim-surround")
     use({
         "abecodes/tabout.nvim",
@@ -88,20 +82,21 @@ return packer.startup(function(use)
     -- Marks
     use("ThePrimeagen/harpoon")
 
+    -- CursorLine
+    use("yamatsum/nvim-cursorline")
     -- Color
     use("NvChad/nvim-colorizer.lua")
     use("ziontee113/color-picker.nvim")
 
     --Colorschemes
     use("navarasu/onedark.nvim") -- colorscheme
+    use({ "ellisonleao/gruvbox.nvim" })
+    use("EdenEast/nightfox.nvim")
+    use("kaicataldo/material.vim")
+    use({ "catppuccin/nvim", as = "catppuccin" })
 
     --Utility
     use("rcarriga/nvim-notify")
-    use("stevearc/dressing.nvim")
-    use("ghillb/cybu.nvim")
-    use("moll/vim-bbye")
-    use("lewis6991/impatient.nvim")
-    use("lalitmee/browse.nvim")
 
     --Statusline and bufferline
     use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
@@ -112,10 +107,6 @@ return packer.startup(function(use)
 
     -- Icons
     use("kyazdani42/nvim-web-devicons") -- web icons
-
-    -- Debugging
-    use("mfussenegger/nvim-dap")
-    use("rcarriga/nvim-dap-ui")
 
     -- Startup
     use("goolord/alpha-nvim")
@@ -139,17 +130,9 @@ return packer.startup(function(use)
 
     -- Project
     use("ahmedkhalf/project.nvim")
-    use("windwp/nvim-spectre")
 
     -- Quickfix
     use("kevinhwang91/nvim-bqf")
-
-    -- Code Runner
-    use("is0n/jaq-nvim")
-    use({
-        "0x100101/lab.nvim",
-        run = "cd js && npm ci",
-    })
 
     -- Git
     use("lewis6991/gitsigns.nvim")
@@ -158,8 +141,6 @@ return packer.startup(function(use)
     use("mattn/vim-gist")
     use("mattn/webapi-vim")
 
-    -- Github
-    use("pwntester/octo.nvim")
     --motion
     use({
         "phaazon/hop.nvim",
@@ -182,7 +163,7 @@ return packer.startup(function(use)
     use({
         "anuvyklack/pretty-fold.nvim",
         config = function()
-            require("pretty-fold").setup()
+            require("pretty-fold").setup({})
         end,
     })
     use("nyngwang/NeoRoot.lua")
