@@ -1,6 +1,6 @@
-local status,neodev = pcall(require, "neodev")
+local status, neodev = pcall(require, "neodev")
 if not status then
-  return
+    return
 else
-  neodev.setup()
-end 
+    neodev.setup()
+end
