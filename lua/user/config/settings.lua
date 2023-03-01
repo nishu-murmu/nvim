@@ -47,7 +47,7 @@ set mouse=a
 set lazyredraw
 set wildignore+=*/node_modules/*
 set termguicolors
-colorscheme catppuccin-mocha  
+colorscheme gruvbox
 " hi Pmenu ctermbg=10 ctermfg=0 guibg=#8080
 set background=dark
 au BufNewFile,BufRead *.es6 setf javascript
