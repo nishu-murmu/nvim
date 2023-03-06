@@ -61,10 +61,13 @@ return packer.startup(function(use)
     use("L3MON4D3/LuaSnip")
 
     -- Syntax/Treesitter
-    use({
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
-    })
+    use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+    'nvim-tree/nvim-web-devicons', -- optional, for file icons
+  },
+  tag = 'nightly' -- optional, updated every week. (see issue #1193)
+}
     use("p00f/nvim-ts-rainbow")
     use("nvim-treesitter/playground")
     use("windwp/nvim-ts-autotag")

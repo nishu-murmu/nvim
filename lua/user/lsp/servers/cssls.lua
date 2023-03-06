@@ -12,6 +12,9 @@ return {
         scss = {
             validate = true,
         },
+        lint = {
+            unknownAtRules = 'ignore'
+        }
     },
     single_file_support = true,
 }

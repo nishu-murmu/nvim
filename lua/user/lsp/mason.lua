@@ -24,13 +24,12 @@ local settings = {
 local servers = {
     "pyright",
     "rust_analyzer",
-    "sumneko_lua",
     "tsserver",
+    "tailwindcss",
     "cssls",
     "cssmodules_ls",
     "bashls",
     "emmet_ls",
-    "phpactor",
     "html",
     "jsonls",
 }
@@ -59,12 +58,7 @@ for _, server in pairs(servers) do
         local sumneko_opts = require("user.lsp.servers.sumneko")
         opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
     end
-    if server == "phpactor" then
-        local phpls_opts = require("user.lsp.servers.phpls")
-        opts = vim.tbl_deep_extend("force", phpls_opts, opts)
-    end
-
-    if server == "pyright" then
+        if server == "pyright" then
         local pyright_opts = require("user.lsp.servers.pyright")
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
     end
@@ -72,6 +66,11 @@ for _, server in pairs(servers) do
     if server == "emmet_ls" then
         local emmet_ls_opts = require("user.lsp.servers.emmet_ls")
         opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
+    end
+
+    if server == "tailwindcss" then
+        local tailwindcss_opts = require("user.lsp.servers.tailwindcss")
+        opts = vim.tbl_deep_extend("force", tailwindcss_opts, opts)
     end
 
     if server == "tsserver" then
