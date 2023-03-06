@@ -29,7 +29,6 @@ map("n", "<leader>tt", ":NvimTreeToggle<CR>", opts)
 map("n", "<leader>tr", ":NvimTreeRefresh<CR>", opts)
 map("n", "<leader>tn", ":NvimTreeFindFile<CR>", opts)
 map("n", "<leader>o", ":lua vim.lsp.buf.format()<CR>", opts)
-
 local status_ok, mark = pcall(require, "harpoon.mark")
 if not status_ok then
     return

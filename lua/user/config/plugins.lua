@@ -56,6 +56,7 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-emoji")
     use("hrsh7th/cmp-nvim-lua")
     use("folke/neodev.nvim")
+    use("github/copilot.vim")
 
     -- snippets
     use("L3MON4D3/LuaSnip")

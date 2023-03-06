@@ -23,6 +23,7 @@ local settings = {
 
 local servers = {
     "pyright",
+    "lua_ls",
     "rust_analyzer",
     "tsserver",
     "tailwindcss",
@@ -54,9 +55,9 @@ for _, server in pairs(servers) do
     }
     server = vim.split(server, "@")[1]
 
-    if server == "sumneko_lua" then
-        local sumneko_opts = require("user.lsp.servers.sumneko")
-        opts = vim.tbl_deep_extend("force", sumneko_opts, opts)
+    if server == "lua_ls" then
+        local lua_ls = require("user.lsp.servers.lua_ls")
+        opts = vim.tbl_deep_extend("force", lua_ls, opts)
     end
         if server == "pyright" then
         local pyright_opts = require("user.lsp.servers.pyright")
