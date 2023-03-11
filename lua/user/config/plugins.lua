@@ -32,7 +32,7 @@ packer.init({
 
 -- Install your plugins here
 return packer.startup(function(use)
-    -- My plugins here
+    -- Plugin Manager here
     use("wbthomason/packer.nvim") -- Packer manage itself
     use("nvim-lua/popup.nvim") -- implementation of popup API from vim to Neovim
     use("nvim-lua/plenary.nvim") -- useful lua functions used by lot of plugins
@@ -57,26 +57,13 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-nvim-lua")
     use("folke/neodev.nvim")
     use("github/copilot.vim")
-
     -- snippets
     use("L3MON4D3/LuaSnip")
 
     -- Syntax/Treesitter
-    use {
-  'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons', -- optional, for file icons
-  },
-  tag = 'nightly' -- optional, updated every week. (see issue #1193)
-}
-    use("p00f/nvim-ts-rainbow")
+    use("nvim-treesitter/nvim-treesitter")
     use("nvim-treesitter/playground")
-    use("windwp/nvim-ts-autotag")
     use("kylechui/nvim-surround")
-    use({
-        "abecodes/tabout.nvim",
-        wants = { "nvim-treesitter" }, -- or require if not used so far
-    })
 
     -- Telescope
     use("nvim-telescope/telescope.nvim") -- fuzzy finder
@@ -99,9 +86,6 @@ return packer.startup(function(use)
     use("kaicataldo/material.vim")
     use({ "catppuccin/nvim", as = "catppuccin" })
 
-    --Utility
-    use("rcarriga/nvim-notify")
-
     --Statusline and bufferline
     use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
     use({
@@ -111,12 +95,6 @@ return packer.startup(function(use)
 
     -- Icons
     use("kyazdani42/nvim-web-devicons") -- web icons
-
-    -- Startup
-    use("goolord/alpha-nvim")
-
-    -- File Explorer
-    use("kyazdani42/nvim-tree.lua")
 
     -- Indent
     use("lukas-reineke/indent-blankline.nvim")
@@ -132,18 +110,8 @@ return packer.startup(function(use)
         end,
     })
 
-    -- Project
-    use("ahmedkhalf/project.nvim")
-
-    -- Quickfix
-    use("kevinhwang91/nvim-bqf")
-
     -- Git
-    use("lewis6991/gitsigns.nvim")
-    use("f-person/git-blame.nvim")
-    use("ruifm/gitlinker.nvim")
-    use("mattn/vim-gist")
-    use("mattn/webapi-vim")
+    use("kdheepak/lazygit.nvim")
 
     --motion
     use({
@@ -157,38 +125,13 @@ return packer.startup(function(use)
     --Editing support
     use("windwp/nvim-autopairs") -- pairs the brackets
     use("mbbill/undotree")
-    use("TimUntersberger/neogit")
-    use("nacro90/numb.nvim")
-    use("andymass/vim-matchup")
-    use("folke/zen-mode.nvim")
+
     use("karb94/neoscroll.nvim")
     use("m4xshen/autoclose.nvim")
-    use("ekickx/clipboard-image.nvim")
-    use({
-        "anuvyklack/pretty-fold.nvim",
-        config = function()
-            require("pretty-fold").setup({})
-        end,
-    })
-    use("nyngwang/NeoRoot.lua")
-    use({
-        "nvim-neotest/neotest",
-        requires = {
-            "nvim-lua/plenary.nvim",
-            "nvim-treesitter/nvim-treesitter",
-            "antoinemadec/FixCursorHold.nvim",
-        },
-    })
-    use({
-        "lewis6991/spellsitter.nvim",
-        config = function()
-            require("spellsitter").setup()
-        end,
-    })
     use("gelguy/wilder.nvim")
 
     -- Peronal plugins
-    -- use("~/Documents/luaPlugin.nvim/")
+    use("~/Documents/tailwind-fold.nvim/")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

@@ -1,6 +1,8 @@
-local status_ok, gruvbox = pcall(require, "gruvbox")
-if not status_ok then
-    return
-else
-    gruvbox.setup()
+function Colorscheme(color)
+    color = color or "catppuccin-mocha"
+    vim.cmd.colorscheme(color)
+    vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 end
+
+Colorscheme()

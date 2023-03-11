@@ -8,6 +8,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 set list
 set listchars=tab:>-,eol:↵
+set incsearch ignorecase smartcase
 set showcmd
 set cmdheight=1
 set scrolloff=10
@@ -42,20 +43,21 @@ set cursorline
 :hi Cursor cterm=underline
 set hidden
 set nowrap
+set guifont=Hack\\Nerd\\Font:h17"
 set backspace=start,eol,indent
 set mouse=a
 set lazyredraw
 set wildignore+=*/node_modules/*
 set termguicolors
-colorscheme onedark
 " hi Pmenu ctermbg=10 ctermfg=0 guibg=#8080
 set background=dark
 au BufNewFile,BufRead *.es6 setf javascript
 au BufNewFile,BufRead *.tsx setf typescriptreact
 ]])
-vim.opt.guifont = { "Source Code Pro", ":h9" }
+vim.opt.guicursor = ""
 vim.g.UtilSnipsExpandTrigger = "<tab>"
 vim.g.UtilSnipsJumpForwardTrigger = "<C-b>"
 vim.g.UtilSnipsJumpBackwardTrigger = "<C-z>"
 vim.g.find_files_findprg = "fd --hidden $* $d"
 vim.g.find_files_findprg = "fd --hidden $* $d"
+vim.g.loaded_node_provider = 0

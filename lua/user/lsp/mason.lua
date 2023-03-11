@@ -59,7 +59,7 @@ for _, server in pairs(servers) do
         local lua_ls = require("user.lsp.servers.lua_ls")
         opts = vim.tbl_deep_extend("force", lua_ls, opts)
     end
-        if server == "pyright" then
+    if server == "pyright" then
         local pyright_opts = require("user.lsp.servers.pyright")
         opts = vim.tbl_deep_extend("force", pyright_opts, opts)
     end
