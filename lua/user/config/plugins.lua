@@ -57,18 +57,17 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-nvim-lua")
     use("folke/neodev.nvim")
     use("github/copilot.vim")
-
     -- snippets
     use("L3MON4D3/LuaSnip")
 
     -- Syntax/Treesitter
-    use {
-  'nvim-tree/nvim-tree.lua',
-  requires = {
-    'nvim-tree/nvim-web-devicons', -- optional, for file icons
-  },
-  tag = 'nightly' -- optional, updated every week. (see issue #1193)
-}
+    use({
+        "nvim-tree/nvim-tree.lua",
+        requires = {
+            "nvim-tree/nvim-web-devicons", -- optional, for file icons
+        },
+        tag = "nightly", -- optional, updated every week. (see issue #1193)
+    })
     use("p00f/nvim-ts-rainbow")
     use("nvim-treesitter/playground")
     use("windwp/nvim-ts-autotag")
@@ -114,9 +113,6 @@ return packer.startup(function(use)
 
     -- Startup
     use("goolord/alpha-nvim")
-
-    -- File Explorer
-    use("kyazdani42/nvim-tree.lua")
 
     -- Indent
     use("lukas-reineke/indent-blankline.nvim")
@@ -188,7 +184,7 @@ return packer.startup(function(use)
     use("gelguy/wilder.nvim")
 
     -- Peronal plugins
-    -- use("~/Documents/luaPlugin.nvim/")
+    use("~/Documents/tailwind-fold.nvim/")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
