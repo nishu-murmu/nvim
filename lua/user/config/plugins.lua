@@ -109,6 +109,7 @@ return packer.startup(function(use)
             require("Comment").setup()
         end,
     })
+    use("JoosepAlviste/nvim-ts-context-commentstring")
 
     -- Git
     use("kdheepak/lazygit.nvim")
@@ -124,6 +125,8 @@ return packer.startup(function(use)
 
     --Editing support
     use("windwp/nvim-autopairs") -- pairs the brackets
+    use("windwp/nvim-ts-autotag") -- pairs the brackets for html tags (works tsx, html, vue, rescript, svelte, php)
+
     use("mbbill/undotree")
 
     use("karb94/neoscroll.nvim")
@@ -131,7 +134,7 @@ return packer.startup(function(use)
     use("gelguy/wilder.nvim")
 
     -- Peronal plugins
-    use("~/Documents/tailwind-fold.nvim/")
+    -- use("~/Documents/tailwind-fold.nvim/")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
