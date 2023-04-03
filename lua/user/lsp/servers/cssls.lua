@@ -13,8 +13,8 @@ return {
             validate = true,
         },
         lint = {
-            unknownAtRules = 'ignore'
-        }
+            unknownAtRules = "ignore",
+        },
     },
     single_file_support = true,
 }

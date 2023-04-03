@@ -109,6 +109,7 @@ cmp.setup({
         end,
     },
     sources = {
+        { name = "nvim_lua", priority = 50 },
         { name = "nvim_lsp", priority = 40 },
         { name = "luasnip", priority = 30 },
         { name = "buffer", priority = 20 },

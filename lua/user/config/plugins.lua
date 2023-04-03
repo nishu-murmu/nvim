@@ -38,6 +38,7 @@ return packer.startup(function(use)
     use("nvim-lua/plenary.nvim") -- useful lua functions used by lot of plugins
 
     -- LSP
+    use("j-hui/fidget.nvim") -- animations while lsp loading
     use("neovim/nvim-lspconfig") -- enable LSP
     use({ "williamboman/mason.nvim" })
     use("williamboman/mason-lspconfig.nvim")
@@ -45,7 +46,6 @@ return packer.startup(function(use)
         "jose-elias-alvarez/null-ls.nvim",
         requires = { "nvim-lua/plenary.nvim" },
     })
-    use("j-hui/fidget.nvim")
     -- Completion plugins
     use("hrsh7th/nvim-cmp") -- The completion plugin
     use("hrsh7th/cmp-buffer") -- buffer completions
@@ -134,7 +134,7 @@ return packer.startup(function(use)
     use("gelguy/wilder.nvim")
 
     -- Peronal plugins
-    -- use("~/Documents/tailwind-fold.nvim/")
+    use("~/Documents/tailwind-fold.nvim/")
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
