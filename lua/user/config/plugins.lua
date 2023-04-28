@@ -36,6 +36,8 @@ return packer.startup(function(use)
     use("wbthomason/packer.nvim") -- Packer manage itself
     use("nvim-lua/popup.nvim") -- implementation of popup API from vim to Neovim
     use("nvim-lua/plenary.nvim") -- useful lua functions used by lot of plugins
+    use('MunifTanjim/nui.nvim')
+
 
     -- LSP
     use("j-hui/fidget.nvim") -- animations while lsp loading
@@ -127,7 +129,7 @@ return packer.startup(function(use)
     --Editing support
     use("windwp/nvim-autopairs") -- pairs the brackets
     use("windwp/nvim-ts-autotag") -- pairs the brackets for html tags (works tsx, html, vue, rescript, svelte, php)
-
+    use({ "stevearc/dressing.nvim" })
     use("mbbill/undotree")
 
     -- use("karb94/neoscroll.nvim")

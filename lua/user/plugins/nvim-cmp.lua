@@ -45,25 +45,23 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+-- cmp.setup.cmdline(":", {
 cmp.setup({
     snippet = {
         expand = function(args)
-            luasnip.lsp_expand(args.body) -- For `luasnip` users.
+            luasnip.lsp_expand(args.body)
         end,
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.select_prev_item(),
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
         ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-        ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
         ["<C-e>"] = cmp.mapping({
             i = cmp.mapping.abort(),
             c = cmp.mapping.close(),
         }),
-        -- Accept currently selected item. If none selected, `select` first item.
-        -- Set `select` to `false` to only confirm explicitly selected items.
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<Tab>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
@@ -72,8 +70,6 @@ cmp.setup({
                 luasnip.expand()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
-            elseif check_backspace() then
-                fallback()
             else
                 fallback()
             end
@@ -93,17 +89,17 @@ cmp.setup({
             "i",
             "s",
         }),
-    },
+    }),
     formatting = {
-        fields = { "kind", "abbr", "menu" },
+        fields = { "menu", "abbr", "kind" },
         format = function(entry, vim_item)
-            -- Kind icons
             vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind)
             vim_item.menu = ({
-                nvim_lsp = "[LSP]",
-                luasnip = "[Snippet]",
-                buffer = "[Buffer]",
-                path = "[Path]",
+                nvim_lua = "Lua",
+                nvim_lsp = "LSP",
+                luasnip = "Snippet",
+                buffer = "Buffer",
+                path = "Path",
             })[entry.source.name]
             return vim_item
         end,
@@ -120,18 +116,20 @@ cmp.setup({
         select = false,
     },
     window = {
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+            border = "rounded",
+            winhighlight = "Normal:Normal,FloatBorder:CmpCompletionBorder,CursorLine:CmpCursorLine,Search:Search",
+            col_offset = -3,
+            side_padding = 1,
+        }),
+        documentation = cmp.config.window.bordered({
+            border = "rounded",
+            winhighlight = "Normal:Normal,FloatBorder:CmpDocumentationBorder,CursorLine:CmpCursorLine,Search:Search",
+            col_offset = -3,
+            side_padding = 1,
+        }),
     },
-    -- window.documentation = cmp.config.window.bordered( "╭", "─", "╮", "│", "╯", "─", "╰", "│" ),
     experimental = {
         ghost_text = false,
-        native_menu = false,
     },
 })
-
--- cmp.setup.cmdline(":", {
---     sources = cmp.config.sources({
---         { name = "path" },
---         { name = "cmdline" },
---     }),
--- })
