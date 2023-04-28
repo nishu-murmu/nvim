@@ -16,12 +16,12 @@ set splitbelow
 set splitright
 set conceallevel=0
 set title
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-" set tabstop=2
-" set shiftwidth=2
-" set softtabstop=2
+" set tabstop=4
+" set shiftwidth=4
+" set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set autoindent
 set smarttab
 set expandtab
@@ -29,6 +29,7 @@ set showtabline=2
 set noshowmode
 set nobackup
 set nowritebackup
+set nohlsearch
 set updatetime=50
 set timeoutlen=500
 set clipboard=unnamedplus
