@@ -36,8 +36,7 @@ return packer.startup(function(use)
     use("wbthomason/packer.nvim") -- Packer manage itself
     use("nvim-lua/popup.nvim") -- implementation of popup API from vim to Neovim
     use("nvim-lua/plenary.nvim") -- useful lua functions used by lot of plugins
-    use('MunifTanjim/nui.nvim')
-
+    use("MunifTanjim/nui.nvim")
 
     -- LSP
     use("j-hui/fidget.nvim") -- animations while lsp loading
