@@ -44,8 +44,4 @@ configs.setup({
             node_decremental = "grm",
         },
     },
-    context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-    },
 })
