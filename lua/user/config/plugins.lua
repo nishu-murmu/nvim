@@ -36,7 +36,6 @@ return packer.startup(function(use)
   use("wbthomason/packer.nvim") -- Packer manage itself
   use("nvim-lua/popup.nvim")    -- implementation of popup API from vim to Neovim
   use("nvim-lua/plenary.nvim")  -- useful lua functions used by lot of plugins
-  use("MunifTanjim/nui.nvim")
 
   -- LSP
   use { "j-hui/fidget.nvim", tag = 'legacy' } -- animations while lsp loading
@@ -57,7 +56,6 @@ return packer.startup(function(use)
   use("hrsh7th/cmp-emoji")
   use("hrsh7th/cmp-nvim-lua")
   use("folke/neodev.nvim")
-  use("github/copilot.vim")
   -- snippets
   use("L3MON4D3/LuaSnip")
 
@@ -74,17 +72,7 @@ return packer.startup(function(use)
   -- Marks
   use("ThePrimeagen/harpoon")
 
-  -- CursorLine
-  use("yamatsum/nvim-cursorline")
-  -- Color
-  use("NvChad/nvim-colorizer.lua")
-  use("ziontee113/color-picker.nvim")
-
   --Colorschemes
-  use("navarasu/onedark.nvim") -- colorscheme
-  use({ "ellisonleao/gruvbox.nvim" })
-  use("EdenEast/nightfox.nvim")
-  use("kaicataldo/material.vim")
   use({ "catppuccin/nvim", as = "catppuccin" })
 
   --Statusline and bufferline
@@ -96,9 +84,6 @@ return packer.startup(function(use)
 
   -- Icons
   use("kyazdani42/nvim-web-devicons") -- web icons
-
-  -- Indent
-  use("lukas-reineke/indent-blankline.nvim")
 
   -- Terminal
   use({ "akinsho/toggleterm.nvim" }) -- terminal below
@@ -114,29 +99,17 @@ return packer.startup(function(use)
 
   -- Git
   use("kdheepak/lazygit.nvim")
+  use("tpope/vim-fugitive")
   use("lewis6991/gitsigns.nvim")
-
-  --motion
-  use({
-    "phaazon/hop.nvim",
-    branch = "v2", -- optional but strongly recommended
-  })
-
-  --Keybindings
-  use("folke/which-key.nvim")
 
   --Editing support
   use("windwp/nvim-autopairs")  -- pairs the brackets
   use("windwp/nvim-ts-autotag") -- pairs the brackets for html tags (works tsx, html, vue, rescript, svelte, php)
   use({ "stevearc/dressing.nvim" })
   use("mbbill/undotree")
-
-  -- use("karb94/neoscroll.nvim")
-  use("m4xshen/autoclose.nvim")
   use("gelguy/wilder.nvim")
 
   -- Peronal plugins
-  -- use("~/Documents/tailwind-fold.nvim/")
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

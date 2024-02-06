@@ -10,6 +10,11 @@ map("v", "K", ":m '<-2<CR>gv=gv", opts)
 
 map("n", "n", "nzzzv", opts)
 map("n", "N", "Nzzzv", opts)
+
+-- navigating through buffers half wise
+map("n", "<C-d>", "<C-d>zz", opts)
+map("n", "<C-u>", "<C-u>zz", opts)
+
 -- replace all the words
 map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 -- how to write and exit
@@ -40,26 +45,26 @@ map("n", "<leader>u", "vim.cmd.UndoTreeToggle", opts)
 
 local status_ok, mark = pcall(require, "harpoon.mark")
 if not status_ok then
-    return
+  return
 end
 local status_ok1, ui = pcall(require, "harpoon.ui")
 if not status_ok1 then
-    return
+  return
 end
 
 if status_ok and status_ok1 then
-    vim.keymap.set("n", "<leader>a", mark.add_file)
-    vim.keymap.set("n", "<S-n>", ui.toggle_quick_menu)
-    vim.keymap.set("n", "<M-1>", function()
-        ui.nav_file(1)
-    end)
-    vim.keymap.set("n", "<M-2>", function()
-        ui.nav_file(2)
-    end)
-    vim.keymap.set("n", "<M-3>", function()
-        ui.nav_file(3)
-    end)
-    vim.keymap.set("n", "<M-4>", function()
-        ui.nav_file(4)
-    end)
+  vim.keymap.set("n", "<leader>a", mark.add_file)
+  vim.keymap.set("n", "<S-n>", ui.toggle_quick_menu)
+  vim.keymap.set("n", "<M-1>", function()
+    ui.nav_file(1)
+  end)
+  vim.keymap.set("n", "<M-2>", function()
+    ui.nav_file(2)
+  end)
+  vim.keymap.set("n", "<M-3>", function()
+    ui.nav_file(3)
+  end)
+  vim.keymap.set("n", "<M-4>", function()
+    ui.nav_file(4)
+  end)
 end

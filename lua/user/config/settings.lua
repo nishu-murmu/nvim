@@ -51,7 +51,6 @@ set lazyredraw
 set wildignore+=*/node_modules/*
 set termguicolors
 " hi Pmenu ctermbg=10 ctermfg=0 guibg=#8080
-set background=dark
 au BufNewFile,BufRead *.es6 setf javascript
 au BufNewFile,BufRead *.tsx setf typescriptreact
 ]])
@@ -61,4 +60,5 @@ vim.g.UtilSnipsJumpForwardTrigger = "<C-b>"
 vim.g.UtilSnipsJumpBackwardTrigger = "<C-z>"
 vim.g.find_files_findprg = "fd --hidden $* $d"
 vim.g.find_files_findprg = "fd --hidden $* $d"
+vim.g.skip_ts_context_commentstring_module = true
 vim.g.loaded_node_provider = 0
