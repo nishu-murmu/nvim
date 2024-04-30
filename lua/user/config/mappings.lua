@@ -15,8 +15,6 @@ map("n", "N", "Nzzzv", opts)
 map("n", "<C-d>", "<C-d>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 
--- replace all the words
-map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
 -- how to write and exit
 map("n", "<leader>q", ":wq!<CR>", opts)
 map("n", "<leader>w", ":w<CR>", opts)
@@ -39,7 +37,7 @@ map("n", "<leader>sg", "<cmd>Telescope live_grep<CR>", opts)
 map("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
 map("n", "<leader>th", "<cmd>Telescope help_tags<CR>", opts)
 map("n", "<leader>tl", "<cmd>Telescope git_files<CR>", opts)
-map("n", "<leader>tt", ":Explore<CR>", opts)
+map("n", "<leader>tt", ":Lexplore<CR>", opts)
 map("n", "<leader>o", ":lua vim.lsp.buf.format()<CR>", opts)
 map("n", "<leader>u", "vim.cmd.UndoTreeToggle", opts)
 
