@@ -2,7 +2,8 @@ local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
     return
 end
-require("nvim-treesitter.install").compilers = { "clang", "gcc" }
+require("nvim-treesitter.install").compilers = { "clang", "gcc", "zig" }
+require("nvim-treesitter.install").prefer_git = true
 configs.setup({
     compilers = { "clang", "gcc" },
     ensure_installed = {
@@ -23,18 +24,19 @@ configs.setup({
         "make",
         "markdown",
         "yaml",
+        "vim",
+        "vimdoc",
     }, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
     sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-    ignore_install = { "phpdoc" }, -- List of parsers to ignore installing
+    ignore_install = { "phpdoc", "vimdoc" }, -- List of parsers to ignore installing
     autopairs = {
         enable = true,
     },
     highlight = {
         enable = true, -- false will disable the whole extension
-        disable = { "" }, -- list of language that will be disabled
         additional_vim_regex_highlighting = true,
     },
-    indent = { enable = true, disable = { "yaml" } },
+    indent = { enable = true, disable = { "yaml", "vimdoc" } },
     incremental_selection = {
         enable = true,
         keymaps = {

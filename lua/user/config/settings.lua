@@ -62,3 +62,4 @@ vim.g.find_files_findprg = "fd --hidden $* $d"
 vim.g.find_files_findprg = "fd --hidden $* $d"
 vim.g.skip_ts_context_commentstring_module = true
 vim.g.loaded_node_provider = 0
+vim.g.python3_host_prog = "~/scoop/shims/python3.exe"

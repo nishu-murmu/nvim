@@ -3,24 +3,17 @@ if not status_ok then
     return
 else
     wilder.setup({ modes = { ":", "/", "?" } })
-    wilder.set_option(
-        "renderer",
-        wilder.renderer_mux({
-            [":"] = wilder.popupmenu_renderer({
-                highlighter = wilder.basic_highlighter(),
+    wilder.set_option("pipeline", {
+        wilder.branch(
+            wilder.python_file_finder_pipeline({
+                ripgrep = { "rg", "--files" },
+                fd = { "fd", "-tf" },
+                file_command = { "find", ".", "-type", "f", "-printf", "%P\n" },
+                dir_command = { "find", ".", "-type", "d", "-printf", "%P\n" },
+                filters = { "fuzzy_filter", "difflib_sorter" },
             }),
-            ["/"] = wilder.wildmenu_renderer({
-                highlighter = wilder.basic_highlighter(),
-            }),
-        })
-    )
-    vim.cmd([[ 
-call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_border_theme({
-      \ 'highlights': {
-      \   'border': 'Normal',
-      \ },
-      \ 'pumblend': 20,
-      \ 'border': 'rounded',
-      \ })))
-]])
+            wilder.cmdline_pipeline(),
+            wilder.python_search_pipeline()
+        ),
+    })
 end
