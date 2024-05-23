@@ -108,6 +108,8 @@ return packer.startup(function(use)
     use({ "stevearc/dressing.nvim" })
     use("mbbill/undotree")
     use("gelguy/wilder.nvim")
+    use("roxma/nvim-yarp")
+    use("roxma/vim-hug-neovim-rpc")
 
     -- Peronal plugins
 
