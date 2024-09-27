@@ -12,4 +12,3 @@ cd ../
 mv nvim/ ~/.config/
 
 nvim -c "so $MYVIMRC"
-nvim -c "PackerSync"

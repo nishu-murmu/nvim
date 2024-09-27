@@ -27,7 +27,7 @@ gitsigns.setup({
         delay = 1000,
         ignore_whitespace = false,
     },
-    current_line_blame_formatter_opts = {
+    current_line_blame_formatter = {
         relative_time = false,
     },
     sign_priority = 6,
@@ -41,8 +41,5 @@ gitsigns.setup({
         relative = "cursor",
         row = 0,
         col = 1,
-    },
-    yadm = {
-        enable = false,
     },
 })

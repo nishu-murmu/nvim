@@ -25,7 +25,7 @@ local servers = {
     "pyright",
     "lua_ls",
     "rust_analyzer",
-    "tsserver",
+    "ts_ls",
     "tailwindcss",
     "cssls",
     "cssmodules_ls",
@@ -33,6 +33,7 @@ local servers = {
     "emmet_ls",
     "html",
     "jsonls",
+    "vimls",
 }
 
 mason.setup(settings)
@@ -74,7 +75,7 @@ for _, server in pairs(servers) do
         opts = vim.tbl_deep_extend("force", tailwindcss_opts, opts)
     end
 
-    if server == "tsserver" then
+    if server == "ts_ls" then
         local tsserver_opts = require("user.lsp.servers.tsserver")
         opts = vim.tbl_deep_extend("force", tsserver_opts, opts)
     end
