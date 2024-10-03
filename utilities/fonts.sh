@@ -1,6 +1,9 @@
 #!/bin/bash
 
-echo "[[ installing Hack Nerd Fonts: ]]"
+SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
+source "$SCRIPT_DIR/common.sh"
+
+info "Installing Hack Nerd Fonts"
 sudo apt-get install fontconfig
 mkdir tmp
 curl -LO "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip"
@@ -13,8 +16,9 @@ else
   mkdir "$FONTS_FOLDER"
   cp *.ttf "$FONTS_FOLDER"
 fi
+export PATH="$PATH:$FONTS_FOLDER"
 fc-cache -fv
 fc-list | grep Hack
-
-echo "[[ Hack Nerd Fonts Installed. ]]"
+cd ..
 rm -rf tmp Hack.zip
+info "Hack Nerd Fonts installed."
