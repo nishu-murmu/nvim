@@ -17,4 +17,4 @@ fc-cache -fv
 fc-list | grep Hack
 
 echo "[[ Hack Nerd Fonts Installed. ]]"
-
+rm -rf tmp Hack.zip
