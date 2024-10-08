@@ -34,6 +34,7 @@ map("n", "<C-k>", "<C-w>k", opts)
 map("n", "<C-l>", "<C-w>l", opts)
 map("n", "<C-b>", "<C-w>b", opts)
 map("n", "<C-t>", "<C-w>t", opts)
+map("n", "<C-w>", ":bd<CR>", opts)
 map("n", "<leader>f", "<cmd>Telescope find_files<CR>", opts)
 map("n", "<leader>sg", "<cmd>Telescope live_grep<CR>", opts)
 map("n", "<leader>b", "<cmd>Telescope buffers<CR>", opts)
@@ -54,7 +55,7 @@ end
 
 if status_ok and status_ok1 then
     vim.keymap.set("n", "<leader>a", mark.add_file)
-    vim.keymap.set("n", "<S-n>", ui.toggle_quick_menu)
+    vim.keymap.set("n", "<leader>n", ui.toggle_quick_menu)
     vim.keymap.set("n", "<M-1>", function()
         ui.nav_file(1)
     end)

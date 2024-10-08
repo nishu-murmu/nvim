@@ -33,6 +33,10 @@ return lazy.setup({
     -- Plugin Manager here
     "nvim-lua/popup.nvim", -- implementation of popup API from vim to Neovim
     { "nvim-lua/plenary.nvim", lazy = true }, -- useful lua functions used by lot of plugins
+    {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+    },
 
     -- LSP
     "j-hui/fidget.nvim", -- animations while lsp loading
@@ -62,7 +66,12 @@ return lazy.setup({
     "kylechui/nvim-surround",
 
     -- Telescope
-    "nvim-telescope/telescope.nvim", -- fuzzy finder
+    {
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.8",
+        -- or                              , branch = '0.1.x',
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
     "nvim-telescope/telescope-media-files.nvim",
     "tom-anders/telescope-vim-bookmarks.nvim",
 
