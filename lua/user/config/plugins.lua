@@ -31,15 +31,10 @@ vim.g.maplocalleader = "\\"
 -- Install your plugins here
 return lazy.setup({
     -- Plugin Manager here
-    "nvim-lua/popup.nvim",                    -- implementation of popup API from vim to Neovim
     { "nvim-lua/plenary.nvim", lazy = true }, -- useful lua functions used by lot of plugins
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
-    },
     -- LSP
-    "j-hui/fidget.nvim",     -- animations while lsp loading
-    "neovim/nvim-lspconfig", -- enable LSP
+    "j-hui/fidget.nvim",                      -- animations while lsp loading
+    "neovim/nvim-lspconfig",                  -- enable LSP
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     {
@@ -53,7 +48,6 @@ return lazy.setup({
     "hrsh7th/cmp-cmdline",      -- cmdline completions
     "saadparwaiz1/cmp_luasnip", -- snippet completions
     "hrsh7th/cmp-nvim-lsp",     -- nvim-cmp source for neovim's built-in language server client.
-    "hrsh7th/cmp-emoji",
     "hrsh7th/cmp-nvim-lua",
     {
         "folke/lazydev.nvim",
@@ -79,20 +73,12 @@ return lazy.setup({
         end,
     },
     {
-        "goolord/alpha-nvim",
-        dependencies = { "echasnovski/mini.icons" },
-        config = function()
-            require("alpha").setup(require("alpha.themes.startify").config)
-            vim.api.nvim_create_autocmd("User", {
-                pattern = "LazyVimStarted",
-                callback = function()
-                    require("alpha").start()
-                end,
-            })
-        end,
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!).
+        build = "make install_jsregexp"
     },
-    -- snippets
-    "L3MON4D3/LuaSnip",
     -- Syntax/Treesitter
     "nvim-treesitter/nvim-treesitter",
     "nvim-treesitter/playground",
@@ -116,8 +102,6 @@ return lazy.setup({
     },
     -- Icons
     "kyazdani42/nvim-web-devicons", -- web icons
-    -- Terminal
-    "akinsho/toggleterm.nvim",      -- terminal below
     --Comments
     {
         "numToStr/Comment.nvim",
@@ -135,6 +119,5 @@ return lazy.setup({
     "windwp/nvim-ts-autotag", -- pairs the brackets for html tags (works tsx, html, vue, rescript, svelte, php)
     "mbbill/undotree",
     "gelguy/wilder.nvim",
-
     -- Peronal plugins
 })
