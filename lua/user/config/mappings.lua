@@ -55,7 +55,7 @@ end
 
 if status_ok and status_ok1 then
     vim.keymap.set("n", "<leader>a", mark.add_file)
-    vim.keymap.set("n", "<leader>n", ui.toggle_quick_menu)
+    vim.keymap.set("n", "<leader>l", ui.toggle_quick_menu)
     vim.keymap.set("n", "<M-1>", function()
         ui.nav_file(1)
     end)

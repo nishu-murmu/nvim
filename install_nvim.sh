@@ -10,39 +10,34 @@ if [[ $? == 1 ]]; then
   mv nvim ~
 fi
 
-if [[ "$1" == "--win" ]]; then
-    info "Installing neovim"
-    winget install Neovim.Neovim
+has_nvim=$(which nvim)
+if [[ $? == 0 ]]; then
+  echo "Neovim already installed in the system"
 else
-  has_nvim=$(which nvim)
-  if [[ $? == 0 ]]; then
-    echo "Neovim already installed in the system"
-  else
-    info "Installing neovim"
-    curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-    sudo rm -rf /opt/nvim
-    sudo tar -C /opt -xzf nvim-linux64.tar.gz
-    rm -rf nvim-linux64.tar.gz
-    export PATH="$PATH:/opt/nvim-linux64/bin"
-  fi
+  info "Installing neovim"
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+  sudo rm -rf /opt/nvim
+  sudo tar -C /opt -xzf nvim-linux64.tar.gz
+  rm -rf nvim-linux64.tar.gz
+  export PATH="$PATH:/opt/nvim-linux64/bin"
 fi
 
 # Arch Linux prerequisites
 if [[ $(uname -r) == *"arch" ]]; then
-  sudo pacman -S git base-devel cmake unzip ninja tree-sitter curl neovim
- else
-	info "Installing Cargo"
+  sudo pacman -S
+  packman_packages=("git" "base-devel" "cmake" "unzip" "ninja" "tree-sitter" "curl" "neovim")
+  for cmd in "${packman_packages[@]}"; do
+    install_pacman_packages "$cmd"
+  done
+else
+  info "Installing Cargo"
   has_cargo=$(which cargo)
   if [[ $? == 0 ]]; then
     echo "Cargo already installed"
   else
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   fi
-  if [[ "$1" == "--win" ]]; then
-    echo ""
-  else
-    source $HOME/.cargo/env
-  fi
+  source $HOME/.cargo/env
 fi
 
 info "Installing Tree-sitter and language servers"
@@ -93,16 +88,6 @@ if ! command -v pip >/dev/null 2>&1; then
 else
   info "pip is already installed"
 fi
-
-
-install_pip_packages() {
-if ! command -v "$1" >/dev/null 2>&1; then
-  info "Installing $1"
-  pip install --user "$1"
-else
-  info "$1 is already installed"
-fi
-}
 
 pip_packages=("tree-sitter-cli"
   "flake8"

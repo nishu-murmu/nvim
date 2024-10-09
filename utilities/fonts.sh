@@ -4,7 +4,12 @@ SCRIPT_DIR=$(dirname "${BASH_SOURCE[0]}")
 source "$SCRIPT_DIR/common.sh"
 
 info "Installing Hack Nerd Fonts"
-sudo apt-get install fontconfig
+if [[ $(uname -r) == *"arch" ]]; then
+  sudo pacman -S fontconfig
+else
+  sudo apt-get install fontconfig
+fi
+
 mkdir tmp
 curl -LO "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Hack.zip"
 unzip -q ./Hack.zip -d tmp
