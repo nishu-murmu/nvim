@@ -1,4 +1,11 @@
-P = function(value)
-    print(vim.inspect(value))
-    return value
+P = function(v)
+    print(vim.inspect(v))
+    return v
+end
+
+RELOAD = function(...)
+    return require("plenary.reload").reload_module(...)
+end
+R = function(name)
+    RELOAD(name)
 end
