@@ -1,5 +1,6 @@
 return {
     "navarasu/onedark.nvim",
+    event = "BufReadPost",
     config = function()
         require("onedark").setup({
             style = "darker",
