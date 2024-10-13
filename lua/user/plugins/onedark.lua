@@ -1,12 +1,6 @@
 return {
-    "navarasu/onedark.nvim",
-    event = "BufReadPost",
-    config = function()
-        require("onedark").setup({
-            style = "darker",
-        })
-        require("onedark").load()
-    end,
+  "navarasu/onedark.nvim",
+  event = "BufReadPost",
 }
 -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
