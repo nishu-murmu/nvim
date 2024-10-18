@@ -24,6 +24,8 @@ return {
     local lspkind = require("lspkind")
 
     lspkind.init()
+
+    local lspkind = require("lspkind")
     cmp.setup({
       snippet = {
         expand = function(args)
@@ -68,12 +70,23 @@ return {
           "s",
         }),
       }),
+      formatting = {
+        format = lspkind.cmp_format({
+          mode = "symbol_text",
+          maxwidth = 50,
+          ellipsis_char = "...",
+          show_labelDetails = true,
+          before = function(entry, vim_item)
+            return vim_item
+          end,
+        }),
+      },
       sources = {
         { name = "nvim_lsp", priority = 50 },
         { name = "nvim_lua", priority = 40 },
         { name = "luasnip",  priority = 30 },
-        { name = "path",     priority = 20 },
-        { name = "buffer",   priority = 10 },
+        { name = "buffer",   priority = 20 },
+        { name = "path",     priority = 10 },
       },
       confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
