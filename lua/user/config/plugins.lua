@@ -23,40 +23,10 @@ end
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
-
 -- Install your plugins here
 return lazy.setup({
     { import = "user.plugins" },
     { import = "user.lsp" },
-    -- buffer completions
-    -- "hrsh7th/cmp-path",         -- path completions
-    -- "hrsh7th/cmp-cmdline",      -- cmdline completions
-    -- "saadparwaiz1/cmp_luasnip", -- snippet completions
-    -- "hrsh7th/cmp-nvim-lua",
-    -- {
-    --     "folke/lazydev.nvim",
-    --     ft = "lua", -- only load on lua files
-    --     opts = {
-    --         library = {
-    --             -- See the configuration section for more details
-    --             -- Load luvit types when the `vim.uv` word is found
-    --             { path = "luvit-meta/library", words = { "vim%.uv" } },
-    --         },
-    --     },
-    -- },
-    -- {
-    --     "L3MON4D3/LuaSnip",
-    --     -- follow latest release.
-    --     version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-    --     -- install jsregexp (optional!).
-    --     build = "make install_jsregexp",
-    -- },
-    -- --Editing support
-    -- "windwp/nvim-autopairs",  -- pairs the brackets
-    -- "windwp/nvim-ts-autotag", -- pairs the brackets for html tags (works tsx, html, vue, rescript, svelte, php)
-    -- "mbbill/undotree",
-    -- "gelguy/wilder.nvim",
-    -- Peronal plugins
 }, {
     defaults = { lazy = true },
     install = { colorscheme = { "catppuccin" } },
