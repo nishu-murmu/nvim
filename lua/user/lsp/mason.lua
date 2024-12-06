@@ -31,7 +31,6 @@ return {
             "bashls",
             "emmet_ls",
             "html",
-            "jsonls",
             "vimls",
         },
         signs = {
@@ -178,13 +177,13 @@ return {
         end
 
         capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
-        local status_ok, mason = pcall(require, "mason")
-        if not status_ok then
+        local status_ok_1, mason = pcall(require, "mason")
+        if not status_ok_1 then
             return
         end
 
-        local status_ok_1, mason_lspconfig = pcall(require, "mason-lspconfig")
-        if not status_ok_1 then
+        local status_ok_2, mason_lspconfig = pcall(require, "mason-lspconfig")
+        if not status_ok_2 then
             return
         end
 

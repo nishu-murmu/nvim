@@ -29,7 +29,7 @@ return lazy.setup({
     { import = "user.lsp" },
 }, {
     defaults = { lazy = true },
-    install = { colorscheme = { "catppuccin" } },
+    install = { colorscheme = { "onedark" } },
     checker = { enabled = true },
     ui = { border = "rounded" },
     performance = {
