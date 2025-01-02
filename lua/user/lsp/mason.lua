@@ -3,7 +3,7 @@ return {
   dependencies = {
     { 'williamboman/mason.nvim', opts = {}, build = ':MasonUpdate' },
     'williamboman/mason-lspconfig.nvim',
-    { 'j-hui/fidget.nvim',       opts = {} },
+    { 'j-hui/fidget.nvim' },
     'hrsh7th/cmp-nvim-lsp',
   },
   event = 'BufReadPost',
