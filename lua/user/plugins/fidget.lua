@@ -1,8 +1,8 @@
 return {
-  "j-hui/fidget.nvim",
-  event = "BufReadPost",
-  config = function(_, opts)
-    local status_ok, fidget = pcall(require, "fidget")
+  'j-hui/fidget.nvim',
+  event = 'BufReadPost',
+  config = function()
+    local status_ok, fidget = pcall(require, 'fidget')
     if not status_ok then
       return
     end
@@ -24,19 +24,18 @@ return {
         end,
         ignore = {},
 
-
         display = {
           render_limit = 16,
           done_ttl = 3,
-          done_icon = "✔",
-          done_style = "Constant",
+          done_icon = '✔',
+          done_style = 'Constant',
           progress_ttl = math.huge,
 
-          progress_icon = { pattern = "moon", period = 1 },
+          progress_icon = { pattern = 'moon', period = 1 },
 
-          progress_style = "WarningMsg",
-          group_style = "Title",
-          icon_style = "Question",
+          progress_style = 'WarningMsg',
+          group_style = 'Title',
+          icon_style = 'Question',
           priority = 30,
           skip_history = true,
 
@@ -48,10 +47,9 @@ return {
             return tostring(group)
           end,
           overrides = {
-            rust_analyzer = { name = "rust-analyzer" },
+            rust_analyzer = { name = 'rust-analyzer' },
           },
         },
-
 
         lsp = {
           progress_ringbuf_size = 0,
@@ -59,23 +57,21 @@ return {
         },
       },
 
-
       integration = {
-        ["nvim-tree"] = {
+        ['nvim-tree'] = {
           enable = true,
         },
-        ["xcodebuild-nvim"] = {
+        ['xcodebuild-nvim'] = {
           enable = true,
         },
       },
-
 
       logger = {
         level = vim.log.levels.WARN,
         max_size = 10000,
         float_precision = 0.01,
 
-        path = string.format("%s/fidget.nvim.log", vim.fn.stdpath("cache")),
+        path = string.format('%s/fidget.nvim.log', vim.fn.stdpath('cache')),
       },
     })
   end,

@@ -53,13 +53,17 @@ set termguicolors
 au BufNewFile,BufRead *.es6 setf javascript
 au BufNewFile,BufRead *.tsx setf typescriptreact
 ]])
-vim.opt.guicursor = ""
-vim.g.UtilSnipsExpandTrigger = "<tab>"
-vim.g.UtilSnipsJumpForwardTrigger = "<C-b>"
-vim.g.UtilSnipsJumpBackwardTrigger = "<C-z>"
-vim.g.find_files_findprg = "fd --hidden $* $d"
-vim.g.find_files_findprg = "fd --hidden $* $d"
+vim.opt.guicursor = ''
+vim.g.UtilSnipsExpandTrigger = '<tab>'
+vim.g.UtilSnipsJumpForwardTrigger = '<C-b>'
+vim.g.UtilSnipsJumpBackwardTrigger = '<C-z>'
+vim.g.find_files_findprg = 'fd --hidden $* $d'
+vim.g.find_files_findprg = 'fd --hidden $* $d'
 vim.g.skip_ts_context_commentstring_module = true
 vim.g.loaded_node_provider = 0
-vim.g.python3_host_prog = "~/scoop/shims/python3.exe"
-vim.g.undotree_DiffCommand = "FC"
+vim.g.python3_host_prog = '~/scoop/shims/python3.exe'
+vim.g.undotree_DiffCommand = 'FC'
+vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true

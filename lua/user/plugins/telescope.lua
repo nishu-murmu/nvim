@@ -1,20 +1,35 @@
 return {
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    keys = {
-        { "<leader>f", "<cmd>Telescope find_files<CR>", desc = "Find files" },
-        { "<leader>b", "<cmd>Telescope buffers<CR>", desc = "Find Buffers" },
-        { "<leader>sg", "<cmd>Telescope live_grep<CR>", desc = "Live Grep" },
-        { "<leader>th", "<cmd>Telescope help_tags<CR>", desc = "Help Tags" },
-        { "<leader>tl", "<cmd>Telescope git_files<CR>", desc = "Git Files" },
-    },
-    config = function()
-        local status_ok, telescope = pcall(require, "telescope")
-        if not status_ok then
-            return
-        else
-            telescope.setup({})
-        end
-    end,
+  'nvim-telescope/telescope.nvim',
+  tag = '0.1.8',
+  dependencies = { 'nvim-lua/plenary.nvim' },
+  keys = {
+    { '<leader>f', '<cmd>Telescope find_files<CR>', desc = 'Find files' },
+    { '<leader>b', '<cmd>Telescope buffers<CR>', desc = 'Find Buffers' },
+    { '<leader>sg', '<cmd>Telescope live_grep<CR>', desc = 'Live Grep' },
+    { '<leader>th', '<cmd>Telescope help_tags<CR>', desc = 'Help Tags' },
+    { '<leader>tl', '<cmd>Telescope git_files<CR>', desc = 'Git Files' },
+  },
+  config = function()
+    local status_ok, telescope = pcall(require, 'telescope')
+    if not status_ok then
+      return
+    else
+      telescope.setup({
+        pickers = {
+          find_files = {
+            find_command = {
+              'fd',
+              '--type',
+              'f',
+              '--color=never',
+              '--hidden',
+              '--follow',
+              '-E',
+              '.git/*',
+            },
+          },
+        },
+      })
+    end
+  end,
 }
