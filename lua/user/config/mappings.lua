@@ -26,7 +26,6 @@ map('n', '<leader>b', ':bw<CR>', opts)
 -- greatest remap ever as said by the primeagen
 map('n', '<leader>p', '"_dP', opts)
 map('v', '<', '<gv', opts)
-map('v', '<', '<gv', opts)
 map('v', '>', '>gv', opts)
 map('n', '<C-h>', '<C-w>h', opts)
 map('n', '<C-j>', '<C-w>j', opts)

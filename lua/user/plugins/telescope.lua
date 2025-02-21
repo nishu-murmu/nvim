@@ -14,22 +14,7 @@ return {
     if not status_ok then
       return
     else
-      telescope.setup({
-        pickers = {
-          find_files = {
-            find_command = {
-              'fd',
-              '--type',
-              'f',
-              '--color=never',
-              '--hidden',
-              '--follow',
-              '-E',
-              '.git/*',
-            },
-          },
-        },
-      })
+      telescope.setup({})
     end
   end,
 }
