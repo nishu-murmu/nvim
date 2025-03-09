@@ -113,4 +113,5 @@ else
   info "nvim folder already exists in ~/.config, skipping move."
 fi
 
+
 nvim -c "so $MYVIMRC"
