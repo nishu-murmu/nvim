@@ -32,6 +32,7 @@ return {
       'emmet_ls',
       'html',
       'vimls',
+      'gopls',
     },
     signs = {
       { name = 'DiagnosticSignError', text = '' },
@@ -213,6 +214,7 @@ return {
       'html',
       'jsonls',
       'vimls',
+      'gopls',
     }
 
     mason.setup(settings)
@@ -257,6 +259,11 @@ return {
       if server == 'ts_ls' then
         local tsserver_opts = require('user.lsp.servers.tsserver')
         opts = vim.tbl_deep_extend('force', tsserver_opts, opts)
+      end
+
+      if server == 'gopls' then
+        local gopls_server = require('user.lsp.servers.gopls')
+        opts = vim.tbl_deep_extend('force', gopls_server, opts)
       end
 
       if server == 'jsonls' then
