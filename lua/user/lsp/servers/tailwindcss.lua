@@ -62,7 +62,6 @@ return {
     'tailwind.config.ts',
     'postcss.config.js',
     'postcss.config.ts',
-    'package.json',
     'node_modules',
     '.git'
   ),

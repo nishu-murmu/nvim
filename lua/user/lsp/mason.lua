@@ -2,7 +2,7 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     { 'williamboman/mason.nvim', opts = {}, build = ':MasonUpdate' },
-    'williamboman/mason-lspconfig.nvim',
+    'mason-org/mason-lspconfig.nvim',
     { 'j-hui/fidget.nvim' },
     'hrsh7th/cmp-nvim-lsp',
   },
@@ -56,26 +56,24 @@ return {
   },
   config = function()
     local setup = function()
-      local signs = {
-        { name = 'DiagnosticSignError', text = '' },
-        { name = 'DiagnosticSignWarn', text = '' },
-        { name = 'DiagnosticSignHint', text = '' },
-        { name = 'DiagnosticSignInfo', text = '' },
-      }
-
-      for _, sign in ipairs(signs) do
-        vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
-      end
-
       local config = {
-        -- disable virtual text
         virtual_text = {
           prefix = '',
         },
-        -- show signs
-        -- signs = {
-        --   active = signs,
-        -- },
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN] = '',
+            [vim.diagnostic.severity.INFO] = '󰋼',
+            [vim.diagnostic.severity.HINT] = '󰌵',
+          },
+          numhl = {
+            [vim.diagnostic.severity.ERROR] = '',
+            [vim.diagnostic.severity.WARN] = '',
+            [vim.diagnostic.severity.HINT] = '',
+            [vim.diagnostic.severity.INFO] = '',
+          },
+        },
         update_in_insert = true,
         underline = true,
         severity_sort = true,
@@ -84,8 +82,6 @@ return {
           style = 'minimal',
           border = 'rounded',
           source = 'always',
-          -- header = "",
-          -- prefix = "",
         },
       }
 
@@ -101,7 +97,7 @@ return {
     end
 
     local function lsp_highlight_document(client, bufnr)
-      if client.supports_method('textDocument/documentHighlight') then
+      if client:supports_method('textDocument/documentHighlight') then
         local group = vim.api.nvim_create_augroup('lsp_document_highlight', { clear = true })
 
         vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
@@ -167,7 +163,7 @@ return {
 
     local on_attach = function(client, bufnr)
       lsp_keymaps(client, bufnr)
-      -- lsp_highlight_document(client)
+      lsp_highlight_document(client)
     end
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -265,7 +261,7 @@ return {
 
       if server == 'jsonls' then
         local jsonls_opts = require('user.lsp.servers.jsonls')
-        opts = vim.tbl_deep_extend('force', jsonls_opts, opts)
+        opts = vim.tbl_deep_extend('force', jsonls_opts, {})
       end
 
       if server == 'cssls' then

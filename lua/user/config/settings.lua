@@ -16,9 +16,6 @@ set splitbelow
 set splitright
 set conceallevel=0
 set title
-" set tabstop=4
-" set shiftwidth=4
-" set softtabstop=4
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
@@ -38,10 +35,6 @@ set number
 set relativenumber
 set ruler
 set cursorline
-:hi CursorLine gui=underline
-:hi CursorLine cterm=underline
-:hi Cursor gui=underline
-:hi Cursor cterm=underline
 set hidden
 set nowrap
 set guifont=Hack\\Nerd\\Font:h17"
@@ -69,3 +62,7 @@ vim.g.undotree_DiffCommand = 'FC'
 -- vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 -- vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+
+-- For translucent background
+-- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+-- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
