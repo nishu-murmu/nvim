@@ -97,11 +97,11 @@ return {
     end,
 
     vim.diagnostic.config({
-      virtual_text = {
-        prefix = '',
-      },
-      virtual_lines = true,
+      virtual_text = true,
       severity_sort = true,
+      float = {
+        border = 'rounded'
+      },
       signs = {
         text = {
           [vim.diagnostic.severity.ERROR] = '',
@@ -110,13 +110,6 @@ return {
           [vim.diagnostic.severity.HINT] = '󰌵',
         },
       },
-      float = {
-        focusable = true,
-        style = 'minimal',
-        border = 'rounded',
-        source = true,
-      },
     })
   }
 }
-
