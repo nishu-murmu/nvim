@@ -35,45 +35,29 @@ This is my custom neovim configuration, for platforms windows and linux.
 Just clone the repository and run the `install_script.sh` file
 
 # Features
-- [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) - Buffer line plugin with tabpage integration for Neovim.
 - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer) - nvim-cmp source for buffer words.
 - [cmp-cmdline](https://github.com/hrsh7th/cmp-cmdline) - nvim-cmp source for Vim's command-line.
-- [cmp-emoji](https://github.com/hrsh7th/cmp-emoji) - nvim-cmp source for emoji.
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp) - nvim-cmp source for Neovim's built-in LSP.
 - [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua) - nvim-cmp source for Neovim Lua API.
 - [cmp-path](https://github.com/hrsh7th/cmp-path) - nvim-cmp source for filesystem paths.
 - [cmp_luasnip](https://github.com/saadparwaiz1/cmp_luasnip) - nvim-cmp source for LuaSnip snippets.
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim) - Smart and powerful commenting plugin for Neovim.
-- [dressing.nvim](https://github.com/stevearc/dressing.nvim) - Improved UI for Neovim's built-in interfaces.
 - [fidget.nvim](https://github.com/j-hui/fidget.nvim) - Standalone UI for LSP progress in Neovim.
-- [harpoon](https://github.com/ThePrimeagen/harpoon) - Quick file navigation plugin for Neovim.
 - [lazy.nvim](https://github.com/folke/lazy.nvim) - Modern plugin manager for Neovim.
-- [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) - Fast and configurable statusline plugin for Neovim.
 - [LuaSnip](https://github.com/L3MON4D3/LuaSnip) - Snippet engine for Neovim written in Lua.
-- [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim) - Bridge between mason.nvim and lspconfig.
-- [mason.nvim](https://github.com/williamboman/mason.nvim) - Portable package manager for Neovim.
 - [neodev.nvim](https://github.com/folke/neodev.nvim) - Setup for Neovim Lua development.
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim) - Inject LSP features via Lua in Neovim.
 - [nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Autopairs plugin for Neovim written in Lua.
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) - Completion plugin for Neovim coded in Lua.
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - Quickstart configs for Neovim LSP client.
-- [nvim-surround](https://github.com/kylechui/nvim-surround) - Manipulate surrounding characters with ease.
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - Treesitter configurations and abstraction layer.
 - [nvim-ts-autotag](https://github.com/windwp/nvim-ts-autotag) - Auto close and rename HTML tags using Treesitter.
-- [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring) - Set commentstring based on cursor location.
 - [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) - File icons for Neovim Lua plugins.
-- [nvim-yarp](https://github.com/roxma/nvim-yarp) - Yet another RPC framework for Neovim.
 - [onedark.nvim](https://github.com/navarasu/onedark.nvim) - One Dark color scheme for Neovim.
-- [playground](https://github.com/nvim-treesitter/playground) - View Treesitter information in Neovim.
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - Useful Lua functions for Neovim plugins.
-- [popup.nvim](https://github.com/nvim-lua/popup.nvim) - Popup API implementation for Neovim.
-- [telescope-media-files.nvim](https://github.com/nvim-telescope/telescope-media-files.nvim) - Preview media files with Telescope.
-- [telescope-vim-bookmarks.nvim](https://github.com/tom-anders/telescope-vim-bookmarks.nvim) - Integrate vim-bookmarks into Telescope.
 - [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - Highly extendable fuzzy finder over lists.
-- [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) - Persist and toggle multiple terminals in Neovim.
 - [undotree](https://github.com/mbbill/undotree) - Visualize Vim undo history as a tree.
 - [vim-fugitive](https://github.com/tpope/vim-fugitive) - Git integration plugin for Vim.
-- [vim-hug-neovim-rpc](https://github.com/roxma/vim-hug-neovim-rpc) - Make Neovim remote plugins callable from Vim8.
 - [wilder.nvim](https://github.com/gelguy/wilder.nvim) - Fuzzy command line autocompletion for Neovim.
 
 # Mappings

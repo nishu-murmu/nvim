@@ -2,7 +2,6 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true }
 -- still don't know how to exit vim
 map('i', 'jk', '<Esc>', opts)
-map('i', 'kj', '<Esc>', opts)
 -- move the words along the visual select
 map('v', 'J', ":m '>+1<CR>gv=gv", opts)
 map('v', 'K', ":m '<-2<CR>gv=gv", opts)
@@ -28,5 +27,5 @@ map('v', '<', '<gv', opts)
 map('v', '>', '>gv', opts)
 map('n', '<leader>o', ':lua vim.lsp.buf.format()<CR>', opts)
 map('n', '<leader>t', ':UndotreeToggle<CR>', opts)
-map('n', '<M-n>', '<cmd>cnext<CR>', opts)
-map('n', '<M-p>', '<cmd>cprev<CR>', opts)
+map('n', '<M-j>', '<cmd>cnext<CR>', opts)
+map('n', '<M-k>', '<cmd>cprev<CR>', opts)

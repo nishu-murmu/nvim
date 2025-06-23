@@ -1,14 +1,14 @@
 return {
   {
     'neovim/nvim-lspconfig',
-    event = "BufReadPre",
+    event = 'BufReadPre',
     dependencies = {
       {
-        "folke/lazydev.nvim",
-        ft = "lua", -- only load on lua files
+        'folke/lazydev.nvim',
+        ft = 'lua', -- only load on lua files
         opts = {
           library = {
-            { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+            { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
           },
         },
       },
@@ -19,7 +19,6 @@ return {
         return
       end
 
-      local opts = {}
       local servers = {
         'pyright',
         'lua_ls',
@@ -52,11 +51,29 @@ return {
         end
       end
 
+      local function lsp_keymaps(client, bufnr)
+        local opts = { noremap = true, silent = true }
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+        if client.server_capabilities.documentFormattingProvider then
+          vim.api.nvim_create_autocmd('BufWritePre', {
+            group = vim.api.nvim_create_augroup('Format', { clear = true }),
+            buffer = bufnr,
+            callback = function()
+              vim.lsp.buf.format()
+            end,
+          })
+        end
+      end
+
       local on_attach = function(client, bufnr)
         lsp_highlight_document(client, bufnr)
+        lsp_keymaps(client, bufnr)
       end
 
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local opts = {}
       for _, server in ipairs(servers) do
         local server_name = vim.split(server, '@')[1]
         opts = {
@@ -95,12 +112,13 @@ return {
         lspconfig[server_name].setup(opts)
       end
     end,
-
     vim.diagnostic.config({
-      virtual_text = true,
+      virtual_text = {
+        prefix = '',
+      },
       severity_sort = true,
       float = {
-        border = 'rounded'
+        border = 'rounded',
       },
       signs = {
         text = {
@@ -110,6 +128,6 @@ return {
           [vim.diagnostic.severity.HINT] = '󰌵',
         },
       },
-    })
-  }
+    }),
+  },
 }
