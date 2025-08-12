@@ -62,7 +62,7 @@ vim.g.undotree_DiffCommand = 'FC'
 -- vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 -- vim.o.foldlevelstart = 99
 vim.o.foldenable = true
-
+vim.g.netrw_list_hide = ''
 -- For translucent background
 -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
 -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })

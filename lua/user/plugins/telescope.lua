@@ -14,7 +14,32 @@ return {
     if not status_ok then
       return
     else
-      telescope.setup({})
+      telescope.setup({
+        defaults = {
+          vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--hidden', -- Include hidden files
+            '--glob=!**/.git/*', -- Exclude .git directory
+          },
+        },
+        pickers = {
+          find_files = {
+            hidden = true, -- Show hidden files in find_files
+            find_command = {
+              'rg',
+              '--files',
+              '--hidden',
+              '--glob=!**/.git/*', -- Exclude .git
+            },
+          },
+        },
+      })
     end
   end,
 }

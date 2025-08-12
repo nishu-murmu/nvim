@@ -4,26 +4,13 @@ return {
   settings = {
     Lua = {
       runtime = {
-        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
         version = 'LuaJIT',
       },
-      completion = {
-        enable = true,
-        callSnippet = 'Replace',
-      },
-      diagnostics = {
-        -- Get the language server to recognize the `vim` global
-        globals = { 'vim', 'describe', 'assert' },
-      },
       workspace = {
+        checkThirdParty = false,
         library = {
-          [vim.fn.expand('$VIMRUNTIME/lua')] = true,
-          [vim.fn.stdpath('config') .. '/lua'] = true,
-          checkThirdParty = false,
+          vim.env.VIMRUNTIME,
         },
-      }, -- Do not send telemetry data containing a randomized but unique identifier
-      telemetry = {
-        enable = false,
       },
     },
   },
