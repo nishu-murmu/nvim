@@ -23,9 +23,24 @@ map('n', '<S-TAB>', ':bprevious<CR>', opts)
 map('n', '<leader>b', ':bw<CR>', opts)
 -- greatest remap ever as said by the primeagen
 map('n', '<leader>p', '"_dP', opts)
+
+-- shift/format code left or right.
 map('v', '<', '<gv', opts)
 map('v', '>', '>gv', opts)
+
+-- format files
 map('n', '<leader>o', ':lua vim.lsp.buf.format()<CR>', opts)
+
 map('n', '<leader>t', ':UndotreeToggle<CR>', opts)
+
 map('n', '<M-j>', '<cmd>cnext<CR>', opts)
 map('n', '<M-k>', '<cmd>cprev<CR>', opts)
+
+-- diagnostic mappings
+map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+map('n', '[d', '<cmd>lua vim.diagnostic.jump({count=1, float=true})<CR>', opts)
+map('v', '<leader>l', '<cmd>lua vim.lsp.buf.format({ range = true })<CR>', opts)
+map('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+map('n', 'gl', '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)

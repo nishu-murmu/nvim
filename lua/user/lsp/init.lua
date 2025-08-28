@@ -52,10 +52,6 @@ return {
       end
 
       local function lsp_keymaps(client, bufnr)
-        local opts = { noremap = true, silent = true }
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
         if client.server_capabilities.documentFormattingProvider then
           vim.api.nvim_create_autocmd('BufWritePre', {
             group = vim.api.nvim_create_augroup('Format', { clear = true }),
