@@ -14,10 +14,6 @@ return {
       },
     },
     config = function()
-      local lspconfig_status_ok, lspconfig = pcall(require, 'lspconfig')
-      if not lspconfig_status_ok then
-        return
-      end
 
       local servers = {
         'pyright',
@@ -105,7 +101,7 @@ return {
           local bashls_opts = require('user.lsp.servers.bashls')
           opts = vim.tbl_deep_extend('force', bashls_opts, opts)
         end
-        lspconfig[server_name].setup(opts)
+        vim.lsp.enable(server_name, opts)
       end
     end,
     vim.diagnostic.config({
