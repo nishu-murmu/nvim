@@ -6,5 +6,5 @@ return {
   init_options = {
     hostInfo = 'neovim',
   },
-  root_dir = util.root_pattern('package.json', 'tsconfig.json', 'jsconfig.json', '.git'),
+  root_dir = util.root_pattern('package.json', 'tsconfig.json', 'jsconfig.json', '.git', 'manifest.json'),
 }
