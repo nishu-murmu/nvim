@@ -14,7 +14,6 @@ return {
       },
     },
     config = function()
-
       local servers = {
         'pyright',
         'lua_ls',
@@ -29,6 +28,7 @@ return {
         'jsonls',
         'vimls',
         'gopls',
+        'astro'
       }
 
       local function lsp_highlight_document(client, bufnr)
@@ -66,43 +66,13 @@ return {
 
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
       local opts = {}
-      for _, server in ipairs(servers) do
-        local server_name = vim.split(server, '@')[1]
-        opts = {
-          on_attach = on_attach,
-          capabilities = capabilities,
-        }
 
-        if server_name == 'lua_ls' then
-          local lua_ls = require('user.lsp.servers.lua_ls')
-          opts = vim.tbl_deep_extend('force', lua_ls, opts)
-        elseif server_name == 'pyright' then
-          local pyright_opts = require('user.lsp.servers.pyright')
-          opts = vim.tbl_deep_extend('force', pyright_opts, opts)
-        elseif server_name == 'emmet_ls' then
-          local emmet_ls_opts = require('user.lsp.servers.emmet_ls')
-          opts = vim.tbl_deep_extend('force', emmet_ls_opts, opts)
-        elseif server_name == 'tailwindcss' then
-          local tailwindcss_opts = require('user.lsp.servers.tailwindcss')
-          opts = vim.tbl_deep_extend('force', tailwindcss_opts, opts)
-        elseif server_name == 'ts_ls' then
-          local tsserver_opts = require('user.lsp.servers.tsserver')
-          opts = vim.tbl_deep_extend('force', tsserver_opts, opts)
-        elseif server_name == 'gopls' then
-          local gopls_server = require('user.lsp.servers.gopls')
-          opts = vim.tbl_deep_extend('force', gopls_server, opts)
-        elseif server_name == 'jsonls' then
-          local jsonls_opts = require('user.lsp.servers.jsonls')
-          opts = vim.tbl_deep_extend('force', jsonls_opts, {})
-        elseif server_name == 'cssls' then
-          local cssls_opts = require('user.lsp.servers.cssls')
-          opts = vim.tbl_deep_extend('force', cssls_opts, opts)
-        elseif server_name == 'bashls' then
-          local bashls_opts = require('user.lsp.servers.bashls')
-          opts = vim.tbl_deep_extend('force', bashls_opts, opts)
-        end
-        vim.lsp.enable(server_name, opts)
-      end
+      opts = {
+        on_attach = on_attach,
+        capabilities = capabilities,
+      }
+      vim.lsp.config("*", opts)
+      vim.lsp.enable(servers, true)
     end,
     vim.diagnostic.config({
       virtual_text = {
