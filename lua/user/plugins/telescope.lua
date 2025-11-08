@@ -3,9 +3,11 @@ return {
   tag = '0.1.8',
   dependencies = { 'nvim-lua/plenary.nvim' },
   keys = {
-    { '<leader>f',
+    {
+      '<leader>f',
       "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
-      desc = 'Find files' },
+      desc = 'Find files',
+    },
     { '<leader>b', '<cmd>Telescope buffers<CR>', desc = 'Find Buffers' },
     { '<leader>sg', '<cmd>Telescope live_grep<CR>', desc = 'Live Grep' },
     { '<leader>th', '<cmd>Telescope help_tags<CR>', desc = 'Help Tags' },
@@ -16,7 +18,7 @@ return {
     if not status_ok then
       return
     else
-      telescope.setup{}
+      telescope.setup({})
     end
   end,
 }

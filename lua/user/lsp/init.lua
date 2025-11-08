@@ -28,7 +28,7 @@ return {
         'jsonls',
         'vimls',
         'gopls',
-        'astro'
+        'astro',
       }
 
       local function lsp_highlight_document(client, bufnr)
@@ -71,7 +71,7 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
       }
-      vim.lsp.config("*", opts)
+      vim.lsp.config('*', opts)
       vim.lsp.enable(servers, true)
     end,
     vim.diagnostic.config({

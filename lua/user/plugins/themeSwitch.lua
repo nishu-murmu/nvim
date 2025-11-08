@@ -1,9 +1,9 @@
 return {
   {
-    "nishu-murmu/ThemeSwitch.nvim",
-    event = "BufReadPre",
+    'nishu-murmu/ThemeSwitch.nvim',
+    event = 'BufReadPre',
     config = function()
-      require("ThemeSwitch").setup()
-    end
-  }
+      require('ThemeSwitch').setup()
+    end,
+  },
 }
