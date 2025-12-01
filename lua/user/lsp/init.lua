@@ -21,14 +21,12 @@ return {
         'ts_ls',
         'tailwindcss',
         'cssls',
-        'cssmodules_ls',
         'bashls',
         'emmet_ls',
-        'html',
         'jsonls',
-        'vimls',
         'gopls',
         'astro',
+        'markdown',
       }
 
       local function lsp_highlight_document(client, bufnr)

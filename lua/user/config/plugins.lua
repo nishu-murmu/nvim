@@ -23,13 +23,15 @@ end
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = '\\'
--- Install your plugins here
 return lazy.setup({
+  -- My actual plugins that I use in my day to day basis.
   { import = 'user.plugins' },
+  -- All my local plugins go in this folder in my local system.
+  { import = 'dev.plugins' },
+  -- My lsp configuration.
   { import = 'user.lsp' },
 }, {
   defaults = { lazy = true },
-  install = { colorscheme = { 'onedark' } },
   checker = { enabled = true },
   ui = { border = 'rounded' },
   performance = {

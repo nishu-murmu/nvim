@@ -2,6 +2,6 @@ return {
   'navarasu/onedark.nvim',
   event = 'BufReadPost',
   config = function()
-    vim.cmd.colorscheme('onedark')
+    vim.cmd.colorscheme('peachpuff')
   end,
 }
