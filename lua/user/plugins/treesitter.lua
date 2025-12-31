@@ -1,6 +1,8 @@
 return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
+  lazy = false,
+  branch = "master",
   event = 'BufReadPost',
   config = function()
     require('nvim-treesitter.install').compilers = { 'clang', 'gcc', 'zig' }
@@ -48,10 +50,11 @@ return {
         },
       },
     })
+
     vim.cmd([[
-set foldlevel=20
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
-    ]])
+    set foldlevel=20
+    set foldmethod=expr
+    set foldexpr=nvim_treesitter#foldexpr()
+        ]])
   end,
 }

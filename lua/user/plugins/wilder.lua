@@ -1,5 +1,6 @@
 return {
   'gelguy/wilder.nvim',
+  event = "BufReadPost",
   config = function()
     local status_ok, wilder = pcall(require, 'wilder')
     if not status_ok then

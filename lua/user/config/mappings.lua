@@ -14,7 +14,7 @@ map('n', '<C-d>', '<C-d>zz', opts)
 map('n', '<C-u>', '<C-u>zz', opts)
 
 -- how to write and exit
-map('n', '<leader>q', ':wq!<CR>', opts)
+-- map('n', '<leader>q', ':wq!<CR>', opts)
 map('n', '<leader>w', ':w<CR>', opts)
 map('n', '<leader>we', ':w<CR>:source %<CR>', opts)
 -- tab navigations

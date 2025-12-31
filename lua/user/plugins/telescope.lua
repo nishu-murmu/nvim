@@ -18,7 +18,13 @@ return {
     if not status_ok then
       return
     else
-      telescope.setup({})
+      telescope.setup({
+        defaults = {
+          preview = {
+            tresitter = false,
+          }
+        }
+      })
     end
   end,
 }

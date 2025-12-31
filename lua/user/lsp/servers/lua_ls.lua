@@ -1,27 +1,43 @@
-local util = require('lspconfig.util')
-
-return {
-  settings = {
-    Lua = {
+vim.lsp.config('lua_ls', {
+  on_init = function(client)
+    if client.workspace_folders then
+      local path = client.workspace_folders[1].name
+      if
+          path ~= vim.fn.stdpath('config')
+          and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
+      then
+        return
+      end
+    end
+    client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
       runtime = {
         version = 'LuaJIT',
+        path = {
+          'lua/?.lua',
+          'lua/?/init.lua',
+        },
       },
       workspace = {
         checkThirdParty = false,
         library = {
-          vim.env.VIMRUNTIME,
-        },
+          '${3rd}/luv/library',
+          unpack(vim.api.nvim_get_runtime_file("", true))
+        }
+      }
+    })
+  end,
+  settings = {
+    Lua = {
+      codeLens = {
+        enable = true
       },
-    },
-  },
-  root_dir = util.root_pattern(
-    '.luarc.json',
-    '.luarc.jsonc',
-    '.luacheckrc',
-    '.stylua.toml',
-    'stylua.toml',
-    'selene.toml',
-    'selene.yml',
-    '.git'
-  ),
-}
+      hint = {
+        enable = true,
+        semicolon = "Disable"
+      },
+      diagnostics = {
+        globals = { "require", "unpack", "pcall" } -- Add 'vim' to the list of known globals
+      }
+    }
+  }
+})

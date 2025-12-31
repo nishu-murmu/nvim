@@ -14,30 +14,31 @@ return {
       },
     },
     config = function()
+      local api = vim.api
       local servers = {
-        'pyright',
         'lua_ls',
-        'rust_analyzer',
-        'ts_ls',
-        'tailwindcss',
         'cssls',
-        'bashls',
         'emmet_ls',
         'jsonls',
+        "markdown_oxide",
+        'pyright',
+        "bashls",
+        'rust_analyzer',
+        'tailwindcss',
+        'ts_ls',
         'gopls',
         'astro',
-        'markdown',
       }
 
       local function lsp_highlight_document(client, bufnr)
         if client:supports_method('textDocument/documentHighlight') then
-          local group = vim.api.nvim_create_augroup('lsp_document_highlight', { clear = true })
-          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+          local group = api.nvim_create_augroup('lsp_document_highlight', { clear = true })
+          api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
             group = group,
             buffer = bufnr,
             callback = vim.lsp.buf.document_highlight,
           })
-          vim.api.nvim_create_autocmd('CursorMoved', {
+          api.nvim_create_autocmd('CursorMoved', {
             group = group,
             buffer = bufnr,
             callback = vim.lsp.buf.clear_references,
@@ -47,8 +48,8 @@ return {
 
       local function lsp_keymaps(client, bufnr)
         if client.server_capabilities.documentFormattingProvider then
-          vim.api.nvim_create_autocmd('BufWritePre', {
-            group = vim.api.nvim_create_augroup('Format', { clear = true }),
+          api.nvim_create_autocmd('BufWritePre', {
+            group = api.nvim_create_augroup('Format', { clear = true }),
             buffer = bufnr,
             callback = function()
               vim.lsp.buf.format()
@@ -62,15 +63,20 @@ return {
         lsp_keymaps(client, bufnr)
       end
 
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
       local opts = {}
-
       opts = {
         on_attach = on_attach,
         capabilities = capabilities,
       }
+
+      for _, server in ipairs(servers) do
+        local ok, _ = pcall(require, "user.lsp.servers." .. server)
+        if not ok then return end
+      end
       vim.lsp.config('*', opts)
-      vim.lsp.enable(servers, true)
+      vim.lsp.enable(servers)
     end,
     vim.diagnostic.config({
       virtual_text = {
