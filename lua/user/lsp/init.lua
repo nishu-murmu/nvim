@@ -8,9 +8,9 @@ return {
       'cssls',
       'emmet_ls',
       'jsonls',
-      "markdown_oxide",
+      'markdown_oxide',
       'pyright',
-      "bashls",
+      'bashls',
       'rust_analyzer',
       'tailwindcss',
       'ts_ls',
@@ -58,7 +58,7 @@ return {
     end
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('blink.cmp').get_lsp_capabilities())
     local opts = {}
     opts = {
       on_attach = on_attach,
@@ -66,8 +66,10 @@ return {
     }
 
     for _, server in ipairs(custom_servers) do
-      local ok, _ = pcall(require, "user.lsp.servers." .. server)
-      if not ok then return end
+      local ok, _ = pcall(require, 'user.lsp.servers.' .. server)
+      if not ok then
+        return
+      end
     end
     vim.lsp.config('*', opts)
     vim.lsp.enable(servers)

@@ -2,7 +2,7 @@ return {
   'nvim-treesitter/nvim-treesitter',
   build = ':TSUpdate',
   lazy = false,
-  branch = "master",
+  branch = 'master',
   event = 'BufReadPost',
   config = function()
     require('nvim-treesitter.install').compilers = { 'clang', 'gcc', 'zig' }

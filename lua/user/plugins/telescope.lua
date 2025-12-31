@@ -22,8 +22,8 @@ return {
         defaults = {
           preview = {
             tresitter = false,
-          }
-        }
+          },
+        },
       })
     end
   end,

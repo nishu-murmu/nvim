@@ -3,8 +3,8 @@ vim.lsp.config('lua_ls', {
     if client.workspace_folders then
       local path = client.workspace_folders[1].name
       if
-          path ~= vim.fn.stdpath('config')
-          and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
+        path ~= vim.fn.stdpath('config')
+        and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
       then
         return
       end
@@ -21,23 +21,23 @@ vim.lsp.config('lua_ls', {
         checkThirdParty = false,
         library = {
           '${3rd}/luv/library',
-          unpack(vim.api.nvim_get_runtime_file("", true))
-        }
-      }
+          unpack(vim.api.nvim_get_runtime_file('', true)),
+        },
+      },
     })
   end,
   settings = {
     Lua = {
       codeLens = {
-        enable = true
+        enable = true,
       },
       hint = {
         enable = true,
-        semicolon = "Disable"
+        semicolon = 'Disable',
       },
       diagnostics = {
-        globals = { "require", "unpack", "pcall" } -- Add 'vim' to the list of known globals
-      }
-    }
-  }
+        globals = { 'require', 'unpack', 'pcall' }, -- Add 'vim' to the list of known globals
+      },
+    },
+  },
 })

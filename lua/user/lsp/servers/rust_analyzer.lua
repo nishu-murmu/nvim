@@ -3,7 +3,7 @@ vim.lsp.config('rust_analyzer', {
     ['rust-analyzer'] = {
       diagnostics = {
         enable = false,
-      }
-    }
-  }
+      },
+    },
+  },
 })
